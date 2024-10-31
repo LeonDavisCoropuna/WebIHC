@@ -43,7 +43,7 @@ export default function Navbar() {
             <a href="#">
               <img
                 className="h-10 md:h-16 lg:h-15 w-auto z-20 relative" // Ajustar el tamaño aquí
-                src="/public/logo-ihc.png"
+                src="/logo-ihc.png"
                 alt="shopify-icon"
               />
             </a>

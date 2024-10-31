@@ -13,7 +13,7 @@ export default function Hero() {
         {/* Imagen de fondo con capa oscura */}
         <div className="flex flex-col items-center justify-center w-full h-full bg-black opacity-20">
           <img
-            src="./public/init.webp"
+            src="./init.webp"
             alt="Background"
             className="w-full h-full object-cover blur-sm"
           />
