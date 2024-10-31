@@ -36,14 +36,20 @@ export default function Banner() {
               tiempo o guiarse mutuamente a distancia. La única forma de escapar es confiando y colaborando estrechamente.            </Paragraph>
           </motion.section>
           <div className="w-full flex justify-center">
-            <motion.img
-              initial="hidden"
-              whileInView="visible"
-              variants={bannerImage}
-              className="object-cover"
-              src="/logo-juego-atrapados.webp"
-              alt="shopify"
-            />
+            <a
+              href="https://www.roblox.com/es/games/126528065133946/SpaceSILENS#!/about"
+              target="_blank"
+              className="hover:scale-105 transition-transform duration-300 ease-in-out"
+            >
+              <motion.img
+                initial="hidden"
+                whileInView="visible"
+                variants={bannerImage}
+                className="object-cover"
+                src="/logo-juego-atrapados.webp"
+                alt="shopify"
+              />
+            </a>
           </div>
         </div>
       </div>
