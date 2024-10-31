@@ -3,6 +3,8 @@ import Subtitle from "../Atoms/subtitle";
 import Paragraph from "../Atoms/paragraph";
 import FeatureItem from "./featureItem";
 import { motion } from "framer-motion";
+import { FaFile } from "react-icons/fa";
+import MainButton from "../Atoms/button";
 
 export default function Features() {
   const dataFeatures = [
@@ -70,6 +72,9 @@ export default function Features() {
             <FeatureItem key={feature.id} feature={feature} i={index} />
           ))}
         </div>
+        <MainButton primary icon={<FaFile />} url="https://drive.google.com/file/d/11aqxS1JY2CNl5gXlsQ550oWQSwBTG98Z/view?usp=sharing" blank={true}>
+          Ver Documento Completo
+        </MainButton>
       </div>
     </div>
   );
