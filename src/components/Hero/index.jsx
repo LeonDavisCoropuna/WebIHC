@@ -30,15 +30,15 @@ export default function Hero() {
           </p>
 
           <div className="mt-20 w-6/12 flex gap-10">
-            <MainButton primary icon={<FaGithub />}>
+            <MainButton primary icon={<FaGithub />} url="https://github.com/LeonDavisCoropuna/WebIHC">
               GitHub
             </MainButton>
 
-            <MainButton primary icon={<FaProjectDiagram />}>
+            <MainButton primary icon={<FaProjectDiagram />} url="https://drive.google.com/file/d/11aqxS1JY2CNl5gXlsQ550oWQSwBTG98Z/view">
               Proyecto Final
             </MainButton>
 
-            <MainButton primary icon={<FaGamepad />}>
+            <MainButton primary icon={<FaGamepad />} url="https://www.roblox.com/games/126528065133946/SpaceSILENS#!/about">
               Video Juego
             </MainButton>
           </div>

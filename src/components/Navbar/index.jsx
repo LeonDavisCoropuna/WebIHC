@@ -62,7 +62,7 @@ export default function Navbar() {
           {/* Menu */}
           <div className="hidden md:flex items-center md:gap-4 lg:gap-8 text-black-200 text-sm lg:text-base font-body nav navbar-nav navbar-right">
             {[
-              { name: "Incio", path: "#inicio" },
+              { name: "Inicio", path: "#inicio" },
               { name: "Proyecto Final", path: "#proyecto-final" },
               { name: "Video Juego", path: "#video-juego" },
               { name: "Nosotros", path: "#nosotros" }
