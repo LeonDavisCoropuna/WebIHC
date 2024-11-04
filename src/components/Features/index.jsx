@@ -44,8 +44,8 @@ export default function Features() {
   };
 
   return (
-    <div id="proyecto-final" className="container mx-auto max-w-[1344px] min-h-screen">
-      <div className="px-5 py-16 flex flex-col gap-10 sm:pb-28 sm:px-10 md:pb-36">
+    <div id="proyecto-final" className="container mx-auto max-w-[1344px] min-h-screen items-center justify-center flex py-10">
+      <div className="px-5 py-16 flex flex-col gap-10 sm:pb-28 sm:px-10 md:pb-36 ">
         {/* Head Content */}
         <motion.div
           initial="hidden"

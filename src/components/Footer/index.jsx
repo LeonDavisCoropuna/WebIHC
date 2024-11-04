@@ -182,7 +182,7 @@ export default function Footer() {
               </a>
             </div>
             <p className="font-body text-white font-medium order-1">
-              © 2024 Curso de Interacción Humano-Computador | Universidad Nacional
+              © 2024 Curso de Interacción Humano-Computador | Universidad Nacional de San Agustín
             </p>
           </div>
         </div>

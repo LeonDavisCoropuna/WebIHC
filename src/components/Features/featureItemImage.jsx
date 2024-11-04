@@ -6,10 +6,10 @@ export default function FeatureItemImage({ feature, i }) {
     const featureItem = {
         visible: {
             opacity: 1,
-            x: 0,
-            transition: { duration: .5, delay: i * 0.1 },
+            y: 0,
+            transition: { duration: .3},
         },
-        hidden: { opacity: 0, x: rightToLeft },
+        hidden: { opacity: 0, y: rightToLeft },
     };
 
     return (
@@ -21,9 +21,7 @@ export default function FeatureItemImage({ feature, i }) {
             className="flex flex-col rounded-xl"
         >
             <div className="px-5 py-2.5 flex items-center justify-between border-b border-gray-300">
-                <h4 className="text-xs text-primary-100 font-medium sm:text-base lg:text-2xl">
-                    {feature?.title}
-                </h4>
+                
             </div>
             {feature.content.map((pagraph, i) => (
                 <div className="p-1" key={i}>

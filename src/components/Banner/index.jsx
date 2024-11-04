@@ -1,6 +1,7 @@
 import SubHead from "../Atoms/subhead";
 import Paragraph from "../Atoms/paragraph";
 import { motion } from "framer-motion";
+import Arrow from "../Atoms/arrow";
 
 export default function Banner() {
   const bannerContainer = {
@@ -14,9 +15,9 @@ export default function Banner() {
   };
 
   return (
-    <div className="bg-primary-100 min-h-screen flex flex-col justify-center items-center" id="video-juego">
+    <div className="bg-primary-100 min-h-screen flex flex-col justify-center items-center py-16" id="video-juego">
       <div className="container mx-auto max-w-[1344px]">
-        <div className="flex px-5 py-9 flex-col gap-8 sm:gap-10 md:gap-16 md:pb-0 lg:gap-20 lg:px-10 lg:pt-12 overflow-hidden">
+        <div className="flex px-5 py-9 flex-col gap-8 sm:gap-10 md:gap-16 md:pb-0 lg:gap-20 lg:px-10 lg:pt-12 overflow-hidden justify-center items-center">
           <motion.section
             initial="hidden"
             whileInView="visible"
@@ -45,12 +46,16 @@ export default function Banner() {
                 initial="hidden"
                 whileInView="visible"
                 variants={bannerImage}
-                className="object-cover"
+                className="object-cover h-[250px]"
                 src="/logo-juego-atrapados.webp"
                 alt="shopify"
               />
             </a>
           </div>
+          <div className="flex">
+            <Arrow index={0} redirect="#timeLine" />
+          </div>
+
         </div>
       </div>
     </div>

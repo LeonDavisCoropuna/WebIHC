@@ -2,15 +2,11 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-import { FaStar, FaPlay, FaClock, FaCheck} from 'react-icons/fa'; // Importa los iconos que desees
+import { FaStar, FaPlay, FaClock, FaCheck, FaChevronDown, FaChevronUp } from 'react-icons/fa'; // Importa iconos adicionales
 
-
-import React from 'react'
-import FeatureItem from '../Features/featureItem';
+import React, { useState } from 'react'
 import FeatureItemImage from '../Features/featureItemImage';
-import Subtitle from '../Atoms/subtitle';
-import SubHead from '../Atoms/subhead';
-import Paragraph from '../Atoms/paragraph';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Timeline() {
   const items = [
@@ -118,35 +114,73 @@ export default function Timeline() {
       date: "24 de Octubre - 2024",
       right: false
     }
-  ];  
+  ];
+  const [expandedItems, setExpandedItems] = useState({});
+
+  // Alterna el estado de expansión de un elemento específico
+  const toggleExpand = (id) => {
+    setExpandedItems((prev) => ({
+      ...prev,
+      [id]: !prev[id], // Cambia entre true y false
+    }));
+  };
 
   return (
-    <div id='verticalTimeLine'>
+    <div id='timeLine' className='pt-16'>
       <VerticalTimeline lineColor='#004c3f'>
-
         <VerticalTimelineElement
           iconStyle={{ background: '#004c3f', color: '#fff' }}
           icon={<FaPlay />}
           date='Inicio 2024'
         />
         {items.map((item, index) => (
-          <VerticalTimelineElement key={index}
+          <VerticalTimelineElement
+            key={index}
             className="vertical-timeline-element--work"
-            contentStyle={{ background: '#fff', color: '#000', border: '2px solid', borderColor: 'black', borderRadius: '20px' }}
-            contentArrowStyle={{ borderRight: '20px solid  rgb(0, 0, 0)' }}
+            contentStyle={{
+              background: '#fff', 
+              color: '#000', 
+              border: '2px solid', 
+              borderColor: 'black', 
+              borderRadius: '20px' 
+            }}
+            contentArrowStyle={{ borderRight: '20px solid rgb(0, 0, 0)' }}
             date={item.date}
-            iconStyle={{ background: item.status === 'completed' ? '#004c3f' : '#db4c00', color: '#fff' }}
-            icon={item.status === 'completed' ? <FaCheck/> :  <FaClock/>}
+            iconStyle={{
+              background: item.status === 'completed' ? '#004c3f' : '#db4c00', 
+              color: '#fff'
+            }}
+            icon={item.status === 'completed' ? <FaCheck /> : <FaClock />}
           >
-            <FeatureItemImage key={item.id} feature={item} index={item.id} />
+            <div className="flex justify-between items-center">
+              <h4 className="text-xs text-primary-100 font-medium sm:text-base lg:text-2xl">
+                {item.title}
+              </h4>
+              <button onClick={() => toggleExpand(item.id)} className="text-primary-100 hover:text-primary-200">
+                {expandedItems[item.id] ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+            </div>
+
+            <AnimatePresence>
+              {expandedItems[item.id] && (
+                <motion.div
+                  key="content" // clave única para animaciones de entrada y salida
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <FeatureItemImage key={item.id} feature={item} index={item.id} />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </VerticalTimelineElement>
         ))}
         <VerticalTimelineElement
-          iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
+          iconStyle={{ background: '#qqq', color: '#fff' }}
           icon={<FaStar />}
         />
       </VerticalTimeline>
-    </div >
-
-  )
+    </div>
+  );
 }
