@@ -1,97 +1,99 @@
-<H1 align ="center" > SHOPIFY </h1>
-<h5  align ="center"> 
-Open source landing page shopify application </h5>
-<br/>
+# Proyecto de Videojuego Serio Colaborativo
 
-  * [Configuration and Setup](#configuration-and-setup)
-  * [Key Features](#key-features)
-  * [Technologies used](#technologies-used)
-  * [📸 Screenshots](#screenshots)
-  * [Author](#author)
-  * [License](#license)
+![Descripción de la imagen](/public/logo-juego-atrapados.webp)
 
+## Por:
+- Paul Parizaca Mozo
+- Avelino Lupo Condori
+- Leon Davis Coropuna
 
+## Introducción
 
-## Configuration and Setup
+El desarrollo de videojuegos serios ha mostrado un gran potencial en áreas como la educación y la capacitación, donde estos juegos no solo entretienen, sino que también facilitan la adquisición de conocimientos y habilidades específicas. Entre las modalidades más prometedoras se encuentran los juegos colaborativos, que permiten a los participantes trabajar en equipo y desarrollar habilidades sociales y de resolución conjunta de problemas. Sin embargo, aunque la colaboración es reconocida como un factor positivo en el aprendizaje, su implementación efectiva en videojuegos serios aún enfrenta desafíos importantes.
 
-In order to run this project locally, simply fork and clone the repository or download as zip and unzip on your machine.
+Investigaciones recientes destacan que los videojuegos colaborativos pueden ser una herramienta poderosa para fomentar la motivación y el compromiso de los jugadores al enfrentarse a metas comunes dentro del juego. No obstante, el diseño de estos juegos debe equilibrar cuidadosamente los objetivos educativos y la experiencia de juego para asegurar que el aprendizaje se integre de manera natural.
 
-- Open the project in your prefered code editor.
-- Go to terminal -> New terminal (If you are using VS code)
+## Planteamiento del Problema
 
-In the first terminal
+En el ámbito educativo y de formación de habilidades sociales, existe una creciente necesidad de herramientas innovadoras que fomenten la colaboración entre usuarios. Los videojuegos serios ofrecen una oportunidad para llenar este vacío, permitiendo la simulación de entornos colaborativos en los que los usuarios puedan mejorar competencias como la toma de decisiones grupales, la resolución de conflictos y el liderazgo compartido. Sin embargo, muchos videojuegos educativos actuales no logran integrar mecánicas de colaboración auténtica ni promueven habilidades interpersonales en situaciones de alta presión.
 
-```
-$ cd react-shopify-landing
-$ npm install 
-$ npm run dev
+## Objetivos
 
-```
+### Objetivo General
+Diseñar un videojuego serio colaborativo que facilite el aprendizaje y desarrolle habilidades interpersonales críticas, como la comunicación efectiva y la toma de decisiones grupales en situaciones de alta presión, mediante mecánicas de interacción centradas en la colaboración.
 
-##  Key Features
+### Objetivos Específicos
+- Diseñar una interfaz de usuario que fomente la interacción fluida y el trabajo en equipo.
+- Desarrollar habilidades de comunicación efectiva en entornos de alta presión.
+- Fomentar la toma de decisiones en grupo y la resolución de conflictos.
+- Promover el liderazgo compartido y el apoyo mutuo entre los participantes.
+- Iterar el diseño del juego basado en el feedback de los usuarios.
 
-- Mobile Responsive
-- Beautiful Animations
-- Product
-- Pricing
-- Testimonial
-- Contact
+## Público Objetivo
 
-<br/>
+El público objetivo incluye estudiantes, profesionales en formación y usuarios interesados en mejorar sus habilidades sociales e interpersonales. Este grupo abarca principalmente:
+- **Edad y contexto educativo:** Jóvenes y adultos jóvenes (15 a 25 años) en contextos educativos.
+- **Competencias tecnológicas:** Nivel intermedio en competencias digitales.
+- **Interés en el desarrollo de habilidades:** Motivados por métodos interactivos y dinámicos.
 
-##  Technologies used
+### Motivaciones y Deficiencias
+- **Motivaciones:** Búsqueda de experiencias de aprendizaje que combinen entretenimiento con el desarrollo de habilidades prácticas.
+- **Deficiencias:** Pueden tener dificultades para mantener la motivación en métodos de aprendizaje convencionales y carecer de oportunidades para practicar colaboración efectiva en contextos de trabajo.
 
-This project was created using the following technologies.
+### Usuarios Objetivo
+El foco está en estudiantes universitarios y profesionales en formación, interesados en aplicar conocimientos de manera práctica y en mejorar su desempeño en equipos de trabajo.
 
-- [React js ](https://www.npmjs.com/package/react) - JavaScript library that is used for building user interfaces specifically for single-page applications.
-- [React Vite](https://vitejs.dev/guide/) - Improved website speed.
-- [React Hooks  ](https://reactjs.org/docs/hooks-intro.html) - For managing and centralizing application state.
-- [react-router-dom](https://www.npmjs.com/package/react-router-dom) - To handle routing.
-- [Tailwind Css](https://tailwindcss.com/) - For User Interface.
-- [React icons](https://react-icons.github.io/react-icons/) -Small library that helps you add icons  to your react apps.
-- [Framer Motion](https://www.framer.com/motion/) As animation on the website.
- 
- ##  Screenshots 
+## ¿Qué hará el proyecto?
 
-![img-1](https://user-images.githubusercontent.com/111676859/235677687-85c8711e-c68d-4946-84fc-b693c542ab2c.png)
----- -
-![img-2](https://user-images.githubusercontent.com/111676859/235677696-19b7a4c3-5e0c-4325-9484-8aacf6de4197.png)
---- - 
-![img-3](https://user-images.githubusercontent.com/111676859/235677700-f90556c4-904f-4a38-853c-bad6157a01d5.png)
---- - 
-![img-4](https://user-images.githubusercontent.com/111676859/235677704-9181c659-cf70-428d-bd02-ebb86ce54eaa.png)
---- - 
-![img-5](https://user-images.githubusercontent.com/111676859/235677711-1f9be054-db9f-425f-b24c-bee8700e6193.png)
---- - 
-![img-6](https://user-images.githubusercontent.com/111676859/235677713-d2ee180f-5915-4d94-b562-aafcf917af8d.png)
+El proyecto consiste en desarrollar un videojuego serio colaborativo que permite a los usuarios mejorar habilidades de trabajo en equipo y colaboración a través de desafíos y tareas interactivas.
 
-## Author
-- Portfolio: [berthutapea](https://berthutapea.vercel.app/)
-- Github: [berthutapea](https://github.com/berthutapea)
-- Sponsor: [berthutapea](https://saweria.co/berthutapea)
-- Linkedin: [gilberthutapea](https://www.linkedin.com/in/gilberthutapea/)
-- Email: [berthutapea@gmail.com](mailto:berthutapea@gmail.com)
+### Funcionalidades Principales
+- **Desafíos colaborativos:** Tareas que fomentan la comunicación, coordinación y toma de decisiones en grupo.
+- **Interacción en tiempo real:** Plataforma con chat de voz y reacciones en el juego.
+- **Sistema de roles y habilidades:** Cada jugador asume un rol único que aporta al equipo y requiere colaboración para avanzar.
 
-## License
+### Características de la Interfaz
+- **Diseño intuitivo y accesible:** Con elementos visuales claros y controles simplificados.
+- **Visualización de progreso:** Mostrar el avance del equipo en los desafíos.
+- **Gamificación:** Logros, niveles de experiencia y recompensas para motivar a los usuarios.
 
-MIT License
+### Innovación y Creatividad
+El proyecto aporta una solución innovadora a la falta de herramientas efectivas para desarrollar habilidades colaborativas. La interfaz interactiva permitirá experimentar situaciones reales de colaboración en un entorno controlado.
 
-Copyright (c) 2022 Gilbert Hutapea
+## Análisis de sistemas existentes
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+### Aplicaciones Competidoras
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+#### “Keep Talking and Nobody Explodes”
+- **Aspectos Positivos:** Fomenta una comunicación intensa y efectiva; diseño sencillo e intuitivo.
+- **Aspectos Negativos:** Dependencia en comunicación verbal; falta de interacción física.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+#### “We Were Here”
+- **Aspectos Positivos:** Estimula la colaboración y el pensamiento crítico.
+- **Aspectos Negativos:** Falta de interacción física y manipulación activa del entorno.
+
+### Diferenciación de Nuestro Proyecto
+Nuestro proyecto se diferencia al integrar interacciones físicas que reflejan acciones del mundo real, donde las acciones de un jugador impactan en el entorno del otro. Esto mejora la inmersión y permite que los jugadores se enfoquen en sus habilidades interpersonales en un entorno de alta presión.
+
+## Artículos Relacionados
+
+1. **Natural User Interface- Next Mainstream Product User Interface**
+   - **Resumen:** Describe el desarrollo de la interfaz de usuario natural y se enfoca en sus características típicas.
+   - **Ventajas:** Enfoque en la interacción natural, multicanalidad.
+   - **Desventajas:** Limitaciones tecnológicas, costos de desarrollo.
+
+2. **A Natural User Interface implementation for an Interactive Learning Environment**
+   - **Resumen:** Presenta un entorno de aprendizaje interactivo llamado CREA y JUEGA.
+   - **Ventajas:** Motivación, disfrute, participación activa.
+   - **Desventajas:** Limitación en contenido educativo, efecto de novedad.
+
+3. **Exploring the effects of a serious game-based learning package for disaster prevention education**
+   - **Resumen:** Paquete de aprendizaje basado en juegos para educación en prevención de desastres.
+   - **Ventajas:** Interactividad, aumento del interés.
+   - **Desventajas:** Dependencia de la tecnología.
+
+4. **Revolutionizing elementary disaster prevention education and training via augmented reality-enhanced collaborative learning**
+   - **Resumen:** Investiga el uso de AR en educación y entrenamiento sobre prevención de desastres.
+   - **Ventajas:** Colaboración mejorada, accesibilidad.
+   - **Desventajas:** Desafíos de implementación, dependencia tecnológica.
+
