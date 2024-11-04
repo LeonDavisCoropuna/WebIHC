@@ -12,7 +12,7 @@ export default function Timeline() {
   const items = [
     {
       id: 1,
-      title: "Lluvia de Ideas",
+      title: "Creación de Idea",
       logo: "/feature-2.svg",
       content: [
         "Para iniciar el desarrollo, se propuso un videojuego de acertijos donde los jugadores deben escapar de una habitación en modo cooperativo mientras son perseguidos.",
@@ -126,13 +126,14 @@ export default function Timeline() {
   };
 
   return (
-    <div id='timeLine' className='pt-16'>
+    <div id='timeLine' className=''>
       <VerticalTimeline lineColor='#004c3f'>
         <VerticalTimelineElement
           iconStyle={{ background: '#004c3f', color: '#fff' }}
           icon={<FaPlay />}
           date='Inicio 2024'
-        />
+        >
+        </VerticalTimelineElement>
         {items.map((item, index) => (
           <VerticalTimelineElement
             key={index}
@@ -177,7 +178,7 @@ export default function Timeline() {
           </VerticalTimelineElement>
         ))}
         <VerticalTimelineElement
-          iconStyle={{ background: '#qqq', color: '#fff' }}
+          iconStyle={{ background: '#145a32', color: '#fff' }}
           icon={<FaStar />}
         />
       </VerticalTimeline>
