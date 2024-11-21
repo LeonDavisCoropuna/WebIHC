@@ -46,11 +46,6 @@ export default function VideoJuego() {
                                 <MainButton url="/video-juego/gestalt" blank={false} >
                                     Principios de Gestalt
                                 </MainButton>
-
-                                <MainButton url="/video-juego/usabilidad" blank={false}>
-                                    Usabilidad
-                                </MainButton>
-
                                 <MainButton url="/video-juego/diseno" blank={false}>
                                     Principios de Diseño de Usabilidad
                                 </MainButton>
