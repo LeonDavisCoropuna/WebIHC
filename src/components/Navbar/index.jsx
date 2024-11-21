@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import NavbarDropdown from "./navbarDropdown";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function Navbar() {
   const handleItemClick = (item, path) => {
     setSelectedItem(item);
     setIsOpen(false);
-    const targetElement = document.querySelector(path);
+    const targetElement = document.querySelector("#init");
     if (targetElement) {
       window.scrollTo({
         top: targetElement.offsetTop,
@@ -69,7 +70,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`bg-tertiary-300 transition-shadow duration-300 fixed top-0 left-0 w-full z-20 ${isOpen || scrollPos > 10 ? "shadow-lg" : ""}`}>
+    <nav id="init" className={`bg-tertiary-300 transition-shadow duration-300 fixed top-0 left-0 w-full z-20 ${isOpen || scrollPos > 10 ? "shadow-lg" : ""}`}>
       <div className="container mx-auto max-w-[1344px]">
         <div className="h-16 md:h-20 p-5 md:py-6 lg:px-5 flex items-center justify-between bg-tertiary-300 transition-colors duration-300">
           <div onClick={handleOpen} className="w-max">
@@ -86,19 +87,17 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center md:gap-4 lg:gap-8 text-black-200 text-sm lg:text-base font-body nav navbar-nav navbar-right">
             {[
-              { name: "Inicio", path: "#inicio" },
-              { name: "Proyecto Final", path: "#proyecto-final" },
-              { name: "Video Juego", path: "#video-juego" },
-              { name: "Nosotros", path: "#nosotros" }
+              { name: "Inicio", path: "" },
+              { name: "Proyecto Final", path: "proyecto" },
+              { name: "Video Juego", path: "video-juego" },
+              { name: "Nosotros", path: "nosotros" }
             ].map(({ name, path }) => (
               <div key={name} className="relative group">
-                <a
+                <Link
                   href={path}
                   className={`relative navlink ${selectedItem === name ? "text-primary-100 font-bold" : "text-black-200"} transition-colors duration-300 ease-in-out`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleItemClick(name, path);
-                  }}
+                  to={path}
+                  onClick={() => handleItemClick(name,path)}
                 >
                   {name}
                   <span
@@ -106,7 +105,7 @@ export default function Navbar() {
                       selectedItem === name ? "scale-x-100" : "scale-x-0"
                     }`}
                   />
-                </a>
+                </Link>
                 <span className={`absolute left-0 bottom-[-5px] h-[2px] w-full bg-primary-100 transition-all duration-300 scale-x-0 group-hover:scale-x-100`} />
               </div>
             ))}

@@ -2,6 +2,7 @@ import SubHead from "../Atoms/subhead";
 import Paragraph from "../Atoms/paragraph";
 import { motion } from "framer-motion";
 import Arrow from "../Atoms/arrow";
+import { Link } from "react-router-dom";
 
 export default function Banner() {
   const bannerContainer = {
@@ -36,6 +37,11 @@ export default function Banner() {
               llave para abrir puertas. Para superar obstáculos, deben coordinarse en trampas que requieren que ambos actúen al mismo
               tiempo o guiarse mutuamente a distancia. La única forma de escapar es confiando y colaborando estrechamente.            </Paragraph>
           </motion.section>
+          <div>
+            <Link to={"/video-juego/gestalt"}>Principios de Gestalt</Link>
+            <Link to={"/video-juego/usabilidad"}>Usabilidad</Link>
+            <Link to={"/video-juego/diseno"}>Principios de Diseño de Usabilidad</Link>
+          </div>
           <div className="w-full flex justify-center">
             <a
               href="https://www.roblox.com/es/games/126528065133946/SpaceSILENS#!/about"

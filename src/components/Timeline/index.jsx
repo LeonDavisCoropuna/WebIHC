@@ -106,7 +106,7 @@ export default function Timeline() {
       title: "Evaluación con Usuarios - Juego VR v4",
       logo: "/feature-5.svg",
       content: [
-        "El juego cumplió con los principios de Gestald, aunque surgieron detalles por pulir, como el feedback visual, donde se usaron nubes con imágenes que afectaban la consistencia visual del juego.",
+        "El juego cumplió con los principios de Gestalt, aunque surgieron detalles por pulir, como el feedback visual, donde se usaron nubes con imágenes que afectaban la consistencia visual del juego.",
         "Se eliminaron las nubes para mantener la consistencia, basando el diseño en los colores asociados a los roles de los jugadores."
       ],
       img: "/juegov4.png",

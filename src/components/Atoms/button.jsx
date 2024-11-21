@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 export default function MainButton({ children, primary, style, icon, url, blank }) {
   return (
-    <a
-      href={url}
+    <Link
+      to={url}
       target={blank ? "_blank" : ""}
       rel={blank ? "noopener noreferrer" : ""}
       className={`${primary
@@ -13,7 +14,7 @@ export default function MainButton({ children, primary, style, icon, url, blank 
     >
       {icon && <span className="text-2xl">{icon}</span>}
       {children}
-    </a>
+    </Link>
   );
 }
 
