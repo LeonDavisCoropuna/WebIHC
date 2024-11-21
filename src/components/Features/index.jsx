@@ -8,6 +8,7 @@ import MainButton from "../Atoms/button";
 import Gallery from "react-image-gallery";
 
 import 'react-image-gallery/styles/css/image-gallery.css';
+import { Link } from "react-router-dom";
 export default function Features() {
   const dataFeatures = [
     {
@@ -214,6 +215,30 @@ export default function Features() {
             </div>
           )}
         />
+        <SubHead style="text-center py-4" color="text-white">
+          Momentos Storyboard - Necesidades
+        </SubHead>
+        <div className="mt-4 flex justify-center">
+          <iframe
+            className="rounded-lg w-full max-w-3xl aspect-video"
+            src="https://www.youtube.com/embed/nEB_pCoSytA"
+            title="Momentos Storyboard - Necesidades"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            height="650px"
+            width="100px"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div className="mt-6 flex justify-center">
+          <Link
+            to="https://www.youtube.com/@paulantonyparizacamozo1467"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-700 underline text-lg font-medium p-4 bg-white rounded-md"
+          >
+            Visita el canal para ver más videos
+          </Link>
+        </div>
 
       </div>
     </>
