@@ -34,11 +34,11 @@ export default function Hero() {
               GitHub
             </MainButton>
 
-            <MainButton primary icon={<FaProjectDiagram />} url="#proyecto-final" blank={false}>
+            <MainButton primary icon={<FaProjectDiagram />} url="/proyecto" blank={false}>
               Proyecto Final
             </MainButton>
 
-            <MainButton primary icon={<FaGamepad />} url="#video-juego" blank={false}>
+            <MainButton primary icon={<FaGamepad />} url="/video-juego" blank={false}>
               Video Juego
             </MainButton>
           </div>
