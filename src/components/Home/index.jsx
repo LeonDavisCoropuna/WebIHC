@@ -30,9 +30,6 @@ export default function Hero() {
           </p>
 
           <div className="mt-20 w-6/12 flex gap-10">
-            <MainButton primary icon={<FaGithub />} url="https://github.com/LeonDavisCoropuna/WebIHC" blank={true}>
-              GitHub
-            </MainButton>
 
             <MainButton primary icon={<FaProjectDiagram />} url="/proyecto" blank={false}>
               Proyecto Final

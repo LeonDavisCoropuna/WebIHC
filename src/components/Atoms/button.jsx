@@ -2,11 +2,22 @@ import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 export default function MainButton({ children, primary, style, icon, url, blank }) {
+  const handleClick = (e) => {
+    if (url.startsWith("#")) {
+      e.preventDefault();
+      const target = document.querySelector(url);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <Link
       to={url}
       target={blank ? "_blank" : ""}
       rel={blank ? "noopener noreferrer" : ""}
+      onClick={handleClick}
       className={`${primary
         ? "border border-primary-100 bg-primary-100 text-tertiary-200"
         : "border border-primary-100 bg-tertiary-300 text-primary-100"
@@ -18,10 +29,10 @@ export default function MainButton({ children, primary, style, icon, url, blank 
   );
 }
 
-
-export function Button({ children, style, buttonStyle, icon }) {
+export function Button({ children, style, buttonStyle, icon, onclick }) {
   return (
     <button
+      onClick={onclick}
       className={`${buttonStyle
         ? buttonStyle
         : "bg-transparent text-primary-100 hover:bg-primary-100 hover:text-white"

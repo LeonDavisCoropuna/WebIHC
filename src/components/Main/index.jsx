@@ -1,5 +1,5 @@
-import Features from "../Features";
-import Hero from "../Hero";
+import Features from "../Proyecto";
+import Hero from "../Home";
 
 export default function Main() {
   return (

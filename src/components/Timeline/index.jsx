@@ -5,7 +5,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import { FaStar, FaPlay, FaClock, FaCheck, FaChevronDown, FaChevronUp } from 'react-icons/fa'; // Importa iconos adicionales
 
 import React, { useState } from 'react'
-import FeatureItemImage from '../Features/featureItemImage';
+import FeatureItemImage from '../Proyecto/featureItemImage';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Timeline() {
@@ -115,7 +115,16 @@ export default function Timeline() {
       right: false
     }
   ];
-  const [expandedItems, setExpandedItems] = useState({});
+  const [expandedItems, setExpandedItems] = useState({
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    6: true,
+    7: true,
+    8: true
+  });
 
   // Alterna el estado de expansión de un elemento específico
   const toggleExpand = (id) => {
@@ -139,16 +148,16 @@ export default function Timeline() {
             key={index}
             className="vertical-timeline-element--work"
             contentStyle={{
-              background: '#fff', 
-              color: '#000', 
-              border: '2px solid', 
-              borderColor: 'black', 
-              borderRadius: '20px' 
+              background: '#fff',
+              color: '#000',
+              border: '2px solid',
+              borderColor: 'black',
+              borderRadius: '20px'
             }}
             contentArrowStyle={{ borderRight: '20px solid rgb(0, 0, 0)' }}
             date={item.date}
             iconStyle={{
-              background: item.status === 'completed' ? '#004c3f' : '#db4c00', 
+              background: item.status === 'completed' ? '#004c3f' : '#db4c00',
               color: '#fff'
             }}
             icon={item.status === 'completed' ? <FaCheck /> : <FaClock />}

@@ -3,20 +3,21 @@ import Subtitle from "../Atoms/subtitle";
 import Paragraph from "../Atoms/paragraph";
 import FeatureItem from "./featureItem";
 import { motion } from "framer-motion";
-import { FaFile } from "react-icons/fa";
+import { FaFile, FaPlay, FaPlayCircle } from "react-icons/fa";
 import MainButton from "../Atoms/button";
 import Gallery from "react-image-gallery";
-
+import { useState } from "react";
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { Link } from "react-router-dom";
-export default function Features() {
+import ReactModal from "react-modal";
+export default function Proyecto() {
   const dataFeatures = [
     {
       id: 1,
       title: "Problema",
       logo: "/feature-1.svg",
       content:
-        "Estudiantes de ciencias de la computación muestran una tendencia al trabajo individual, impulsada por la autosuficiencia debido al uso de IA, lo cual limita el desarrollo de habilidades colaborativas.",
+        "Estudiantes de Ciencia de la Computación muestran una tendencia al trabajo individual, impulsada por la autosuficiencia debido al uso de IA, lo cual limita el desarrollo de habilidades colaborativas.",
     },
     {
       id: 2,
@@ -108,6 +109,19 @@ export default function Features() {
     hidden: { y: -100, opacity: 0 },
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const openModal = (video) => {
+    setSelectedVideo(video);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setSelectedVideo(null);
+  };
+
   return (
     <>
       <div id="proyecto-final" className="container mx-auto max-w-[1344px] min-h-screen items-center justify-center flex py-10">
@@ -123,13 +137,6 @@ export default function Features() {
             <SubHead style="mb-[18px] sm:w-8/12 md:w-9/12 lg:w-7/12">
               Propuesta Proyecto Final
             </SubHead>
-            <Paragraph
-              fontSize="text-sm"
-              color="text-black-400"
-              style="sm:w-3/5 md:w-7/12 lg:w-1/3"
-            >
-              Propuesta final para el curso de Interacción Humano Computador con diseño centrado en el usuario
-            </Paragraph>
           </motion.div>
 
           {/* Feature Items */}
@@ -138,58 +145,51 @@ export default function Features() {
               <FeatureItem key={feature.id} feature={feature} i={index} />
             ))}
           </div>
-          <MainButton primary icon={<FaFile />} url="https://drive.google.com/file/d/11aqxS1JY2CNl5gXlsQ550oWQSwBTG98Z/view?usp=sharing" blank={true}>
+          <MainButton primary icon={<FaFile />} url="#doc" blank={false}>
             Ver Documento Completo
           </MainButton>
         </div>
 
       </div>
       {/* Etapa 1 */}
+      <div id="doc" className="pb-12" />
       <div className="min-h-screen bg-primary-300 justify-center items-center flex flex-col">
         <SubHead style="text-center py-4" color="text-white">
           Etapa 1 - Documento
         </SubHead>
         <iframe
-          src="https://drive.google.com/file/d/129mMKmvJyEpaQ1GgNSh0Mn0TvhPpaO2M/preview"
+          src="https://drive.google.com/file/d/1gawUb_kv_ss0-U8b7zlk-yiAYlmok4EH/preview"
           width="55%"
           height="800px"
           title="PDF Viewer"
         ></iframe>
+
       </div>
       {/* Etapa 2 */}
       <div className="min-h-screen bg-white justify-center items-center flex flex-col">
         <SubHead style="text-center py-4">
           Etapa 2 - Needfinding
         </SubHead>
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS2AY6tgD6d-k0nd7TtDSn5zwn1l9xXUQtGds1-XVrInP-dgtC_W9VWoAw5Ln3jmQ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1152" height="671" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        <div>
-          <SubHead style="text-center py-4">Lista de Videos</SubHead>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-16">
+        <div className="flex gap-x-12 ">
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS2AY6tgD6d-k0nd7TtDSn5zwn1l9xXUQtGds1-XVrInP-dgtC_W9VWoAw5Ln3jmQ/embed?start=false&loop=false&delayms=3000"
+            frameborder="0" width="1140" height="700" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+          <div className=" justify-between flex flex-col">
             {videos.map((video) => (
-              <div
+              <button
                 key={video.id}
-                className="bg-primary-300 rounded-lg shadow-lg p-4 flex flex-col items-center"
+                className="bg-primary-300 rounded-lg shadow-md p-4 cursor-pointer  w-[350px] flex flex-col 
+                justify-self-center items-center gap-y-2 border border-primary-100 text-black hover:bg-gray-600 shadow-black-100"
+                onClick={() => openModal(video)}
               >
-                <iframe
-                  className="rounded-lg w-[500px] h-[260px]" // Aquí ajustas la altura
-                  src={`https://www.youtube.com/embed/${video.id}`}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-                <h2 className="text-lg font-semibold mt-4  text-white">{video.title}</h2>
-                <a
-                  href={`https://www.youtube.com/watch?v=${video.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 text-blue-500 hover:underline"
-                >
-                </a>
-              </div>
+                <FaPlayCircle size={50} color="white" />
+                <h2 className="text-white">{video.title}</h2>
+              </button>
             ))}
           </div>
         </div>
       </div>
+
 
       {/* Etapa 3 */}
       <div className="min-h-screen bg-primary-300 items-center justify-center flex flex-col">
@@ -202,19 +202,24 @@ export default function Features() {
           showPlayButton={false}
           showThumbnails={true}
           thumbnailPosition="bottom"
-          slideDuration={500}
+          slideDuration={800}
           slideInterval={2000}
           lazyLoad={true}
           renderItem={(item) => (
-            <div className="relative w-full h-full">
+            <div className="w-full h-full">
               <img
                 src={item.original}
                 alt={item.description}
-                className="object-contain max-h-[650px] min-h-[650px]"
+                className="object-none w-[1400px] h-[800px] mx-auto"
+                style={{
+                  maxWidth: "100%",
+                  display: "block",
+                }}
               />
             </div>
           )}
         />
+
         <SubHead style="text-center py-4" color="text-white">
           Momentos Storyboard - Necesidades
         </SubHead>
@@ -239,7 +244,32 @@ export default function Features() {
             Visita el canal para ver más videos
           </Link>
         </div>
-
+        <ReactModal
+          isOpen={isOpen}
+          onRequestClose={closeModal}
+          contentLabel="Video Modal"
+          style={{
+            content: {
+              top: '50%',
+              left: '50%',
+              right: 'auto',
+              bottom: 'auto',
+              marginRight: '-50%',
+              transform: 'translate(-50%, -50%)',
+              width: '80%',
+              height: '80%',
+            },
+            overlay: { backgroundColor: 'rgba(0, 0, 0, 0.8)' },
+          }}
+        >
+          {selectedVideo && (
+            <iframe
+              src={`https://www.youtube.com/embed/${selectedVideo.id}`}
+              className="w-full h-full"
+              allowFullScreen
+            ></iframe>
+          )}
+        </ReactModal>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import FeatureItemProgrammer from "../Features/featureProgramers";
+import FeatureItemProgrammer from "../Proyecto/featureProgramers";
 import CardItem from "./cardItem";
 import UserProfileCard from "./userCard";
 

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa"; // Importamos las flechas de React Icons
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules"; // Navegación para las flechas
+import Gallery from "react-image-gallery";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -71,15 +73,19 @@ const GestaltSelectorCarrusel = () => {
       ],
     },
   ];
-
+  const transformarImagenes = (imagenes) =>
+    imagenes.map((url) => ({
+      original: url,
+      thumbnail: url,
+    }));
   // Estado para rastrear la categoría seleccionada
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(0);
 
   return (
     <div className="flex flex-col min-h-screen bg-primary-300">
-      <SubHead style="text-center pt-32 pb-4 text-white">Principios de Gestalt</SubHead>
-      <div className="flex flex-col md:flex-row p-4 gap-8 justify-center items-center h-full">
-        <div className="md:w-1/3 space-y-4">
+      <SubHead style="text-center pt-32 text-white">Principios de Gestalt</SubHead>
+      <div className="flex flex-col md:flex-row gap-8 justify-center h-full max-h-[36em] px-4">
+        <div className="md:w-1/3 space-y-4 flex flex-col justify-between">
           {categorias.map((categoria, index) => (
             <button
               key={index}
@@ -96,43 +102,16 @@ const GestaltSelectorCarrusel = () => {
 
         {/* Carrusel */}
         <div className="md:w-2/3">
-          <Swiper
-            key={categoriaSeleccionada}
-            effect="coverflow"
-            grabCursor
-            centeredSlides
-            slidesPerView="auto"
-            loop
-            coverflowEffect={
-              {
-                rotate: 0,
-                stretch: 0,
-                depth: 200,
-                modifier: 3.5
-              }
-
-            }
-            pagination={{ el: "", clickable: true }} // Puntos de paginación
-            navigation={{
-              prevEl: ".swiper-button-prev", // Clase personalizada para el botón anterior
-              nextEl: ".swiper-button-next", // Clase personalizada para el botón siguiente
-            }}
-            modules={[Navigation, Pagination, EffectCoverflow]}
-            className="swiper-container"
-          >
-            {categorias[categoriaSeleccionada].imagenes.map((url, i) => (
-              <SwiperSlide key={url}>
-                <img
-                  src={url}
-                  alt={`${categorias[categoriaSeleccionada].titulo} ${i + 1}`}
-                  className="h-[550px] w-[1100px] rounded-lg shadow-md"
-                />
-              </SwiperSlide>
-            ))}
-            {/* Flechas personalizadas */}
-            <FaArrowAltCircleLeft className="swiper-button-prev hover:text-red-400 hover:scale-105 w-[50px]" size={100} />
-            <FaArrowAltCircleRight className="swiper-button-next hover:text-red-400 hover:scale-105 w-[50px]" size={100} />
-          </Swiper>
+          <Gallery
+            items={transformarImagenes(categorias[categoriaSeleccionada].imagenes)}
+            showNav={true}
+            showPlayButton={false}
+            showThumbnails={true}
+            thumbnailPosition="bottom"
+            slideDuration={800}
+            slideInterval={2000}
+            lazyLoad={false}
+          />;
         </div>
       </div>
 

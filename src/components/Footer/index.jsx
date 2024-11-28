@@ -39,9 +39,6 @@ export default function Footer() {
               En este curso, desarrollaremos un videojuego como proyecto final,
               aplicando principios de diseño y técnicas de interacción.
             </Paragraph>
-            <MainButton style="w-full sm:w-9/12 sm:w-fit lg:w-fit hover:bg-primary-300 hover:border-white hover:text-white transition-all duration-200 ease-in">
-              CONTÁCTANOS
-            </MainButton>
           </motion.section>
         </div>
 
@@ -72,121 +69,6 @@ export default function Footer() {
         />
       </div>
       {/* Footer */}
-      <footer className="container mx-auto max-w-[1344px]">
-        <div className="px-5 py-10 flex flex-col sm:px-10 lg:grid grid-cols-3 lg:gap-y-32">
-          <div className="lg:col-span-1">
-            <img
-              className="w-[125px] h-auto mb-10 lg:mb-0 filter invert"
-              src="logo-ihc.png"
-              alt="logo del curso IHC"
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-9 font-body mb-[52px] md:grid-cols-4 lg:col-span-2 lg:mb-0">
-            <div>
-              <h6 className="mb-5 font-medium text-lg text-white">Temas</h6>
-              <div className="flex flex-col gap-4 text-white/70 text-sm">
-                <a className="footer-link" href="#">
-                  Diseño de Interfaces
-                </a>
-                <a className="footer-link" href="#">
-                  Experiencia de Usuario
-                </a>
-                <a className="footer-link" href="#">
-                  Principios de Usabilidad
-                </a>
-                <a className="footer-link" href="#">
-                  Técnicas de Evaluación
-                </a>
-                <a className="footer-link" href="#">
-                  Casos de Estudio
-                </a>
-              </div>
-            </div>
-            <div>
-              <h6 className="mb-5 font-medium text-lg text-white">Proyecto</h6>
-              <div className="flex flex-col gap-4 text-white/70 text-sm">
-                <a className="footer-link" href="#">
-                  Desarrollo del Videojuego
-                </a>
-                <a className="footer-link" href="#">
-                  Integración de IA
-                </a>
-                <a className="footer-link" href="#">
-                  Prototipos y Testeo
-                </a>
-                <a className="footer-link" href="#">
-                  Documentación
-                </a>
-                <a className="footer-link" href="#">
-                  Entrega Final
-                </a>
-              </div>
-            </div>
-            <div>
-              <h6 className="mb-5 font-medium text-lg text-white">Recursos</h6>
-              <div className="flex flex-col gap-4 text-white/70 text-sm">
-                <a className="footer-link" href="#">
-                  Guías de Referencia
-                </a>
-                <a className="footer-link" href="#">
-                  Ejemplos de Proyecto
-                </a>
-                <a className="footer-link" href="#">
-                  Talleres y Webinars
-                </a>
-                <a className="footer-link" href="#">
-                  Documentación Técnica
-                </a>
-              </div>
-            </div>
-            <div>
-              <h6 className="mb-5 font-medium text-lg text-white">Ayuda</h6>
-              <div className="flex flex-col gap-4 text-white/70 text-sm">
-                <a className="footer-link" href="#">
-                  Contacto con Profesores
-                </a>
-                <a className="footer-link" href="#">
-                  Base de Conocimientos
-                </a>
-                <a className="footer-link" href="#">
-                  Recursos en Línea
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="text-center lg:col-span-3 md:flex justify-between items-center">
-            <div className="flex items-center justify-center gap-4 mb-4 order-2">
-              <a href="https://www.instagram.com/ihc-course/" target="_blank">
-                <img
-                  className="footer-icon"
-                  src="/instagram.svg"
-                  alt="instagram"
-                />
-              </a>
-              <a href="https://github.com/ihc-course" target="_blank">
-                <img className="footer-icon" src="/github.svg" alt="github" />
-              </a>
-              <a href="https://t.me/ihc-course" target="_blank">
-                <img
-                  className="footer-icon"
-                  src="/telegram.svg"
-                  alt="telegram"
-                />
-              </a>
-              <a href="https://www.linkedin.com/school/ihc-course/" target="_blank">
-                <img
-                  className="footer-icon"
-                  src="/linkedin.svg"
-                  alt="linkedin"
-                />
-              </a>
-            </div>
-            <p className="font-body text-white font-medium order-1">
-              © 2024 Curso de Interacción Humano-Computador | Universidad Nacional de San Agustín
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
