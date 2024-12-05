@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import SubHead from '../Atoms/subhead';
 import Paragraph from '../Atoms/paragraph';
 import { Link } from 'react-router-dom';
-import Timeline from '../Timeline';
+import Timeline from '../Timeline/videogame';
 import MainButton from '../Atoms/button';
 import { FaGamepad, FaGithub, FaProjectDiagram } from 'react-icons/fa';
 import FeatureItemGestalt from '../Proyecto/featureItemGestalt';

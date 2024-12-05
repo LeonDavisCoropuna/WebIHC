@@ -1,0 +1,97 @@
+import React, { useState } from 'react'
+import SubHead from '../../Atoms/subhead'
+import { FaPlayCircle } from 'react-icons/fa'
+import ReactModal from 'react-modal';
+
+export default function Needfinding() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedVideo, setSelectedVideo] = useState(null);
+
+    const videos = [
+        {
+            id: "KNySPtOPYgU",
+            title: "Entrevista a Josue - Etapa 2",
+            description: "Usuario de tercer año"
+        },
+        {
+            id: "7jBwEUYMmxI",
+            title: "Entrevista a Aldo - Etapa 2",
+            description: "Usuario dependiente de IA"
+        },
+        {
+            id: "FMYRFJO7HoY",
+            title: "Entrevista a Edward - Etapa 2",
+            description: "Usuario Experto"
+        },
+        {
+            id: "ZEjBxRl-bTQ",
+            title: "Entrevista a José Luis - Etapa 2",
+            description: "Usuario de primer año"
+        },
+    ];
+
+    const openModal = (video) => {
+        setSelectedVideo(video);
+        setIsOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsOpen(false);
+        setSelectedVideo(null);
+    };
+    return (
+        <>
+            <div className="min-h-screen bg-white justify-center items-center flex flex-col">
+                <SubHead style="text-center">
+                    Etapa 2 - Needfinding
+                </SubHead>
+                <div className="flex gap-x-12 ">
+                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS2AY6tgD6d-k0nd7TtDSn5zwn1l9xXUQtGds1-XVrInP-dgtC_W9VWoAw5Ln3jmQ/embed?start=false&loop=false&delayms=3000"
+                        frameborder="0" width="850" height="700" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+                    <div className="justify-between flex flex-col">
+                        {videos.map((video) => (
+                            <button
+                                key={video.id}
+                                className="bg-primary-300 rounded-lg shadow-md p-4 cursor-pointer w-[350px] flex flex-col 
+            justify-self-center items-center gap-y-2 border border-primary-100 text-black hover:bg-gray-600 shadow-black-100"
+                                onClick={() => openModal(video)}
+                            >
+                                <FaPlayCircle size={50} color="white" />
+                                <h2 className="text-white">{video.title}</h2>
+                                <p className="text-gray-300 text-sm text-center">{video.description}</p>
+                            </button>
+                        ))}
+                    </div>
+
+                </div>
+            </div>
+            <ReactModal
+                isOpen={isOpen}
+                onRequestClose={closeModal}
+                contentLabel="Video Modal"
+                style={{
+                    content: {
+                        top: '50%',
+                        left: '50%',
+                        right: 'auto',
+                        bottom: 'auto',
+                        marginRight: '-50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: '80%',
+                        height: '80%',
+                    },
+                    overlay: { backgroundColor: 'rgba(0, 0, 0, 0.8)' },
+                }}
+            >
+                {selectedVideo && (
+                    <iframe
+                        src={`https://www.youtube.com/embed/${selectedVideo.id}`}
+                        className="w-full h-full"
+                        allowFullScreen
+                    ></iframe>
+                )}
+            </ReactModal>
+        </>
+    )
+}
