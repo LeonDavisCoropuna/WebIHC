@@ -205,7 +205,7 @@ export default function Proyecto() {
               whileInView="visible"
               variants={bannerImage}
               className="object-cover h-[500px]"
-              src="/logo-juego-atrapados.webp"
+              src="/logo-ihc.png"
               alt="shopify"
             />
           </a>
