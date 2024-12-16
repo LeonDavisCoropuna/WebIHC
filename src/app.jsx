@@ -15,6 +15,9 @@ export default function App() {
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="proyecto" element={<Proyecto />} />
+        <Route path="proyecto/gestalt" element={<Gestalt />} />
+        <Route path="proyecto/usabilidad" element={<Usability />} />
+        <Route path="proyecto/diseno" element={<Design />} />
         <Route path="video-juego" element={<Videogame />} />
         <Route path="video-juego/gestalt" element={<Gestalt />} />
         <Route path="video-juego/usabilidad" element={<Usability />} />

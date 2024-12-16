@@ -11,6 +11,7 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import { Link } from "react-router-dom";
 import ReactModal from "react-modal";
 import TimeLineProyecto from "../Timeline/proyecto"
+import FeatureItemGestalt from "./featureItemGestalt";
 export default function Proyecto() {
   const dataFeatures = [
     {
@@ -70,6 +71,15 @@ export default function Proyecto() {
     };
   }, []);
 
+  const bannerContainer = {
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: 100 },
+  };
+
+  const bannerImage = {
+    visible: { y: 0, opacity: 1, transition: { duration: .5 } },
+    hidden: { y: 200, opacity: 1 },
+  };
 
   return (
     <>
@@ -155,6 +165,51 @@ export default function Proyecto() {
           </MainButton>
         </div>
 
+      </div>
+      <div className='flex justify-center min-h-screen bg-primary-300 items-center gap-x-10 w-full px-20'>
+        <div className="w-full flex gap-10 flex-col">
+          <div className='flex flex-col justify-center items-center gap-y-4'>
+            <FeatureItemGestalt feature={{
+              id: 1,
+              title: "Principios de Gestalt",
+              logo: "/feature-1.svg",
+              content:
+                "El principio de Gestalt describe cómo la percepción visual humana tiende a organizar los elementos en formas completas, en lugar de ver partes aisladas. Estos principios, como Proximidad, Similitud y Cierre, son ampliamente usados en diseño gráfico y de interfaces para mejorar la claridad visual.",
+            }}><MainButton url="/proyecto/gestalt" blank={false} >
+                Ver Principios de Gestald
+              </MainButton></FeatureItemGestalt>
+
+          </div>
+          <div>
+            <FeatureItemGestalt feature={{
+              id: 2,
+              title: "Principios de Diseño de Usabilidad",
+              logo: "/feature-4.svg",
+              content:
+                "Los principios de diseño de usabilidad son pautas que buscan optimizar la interacción entre los usuarios y un sistema o producto, asegurando que sea fácil de usar, eficiente y satisfactorio. Se centran en aspectos como la claridad, la consistencia, la accesibilidad y la retroalimentación, con el objetivo de mejorar la experiencia del usuario en interfaces gráficas, páginas web y aplicaciones.",
+            }}><MainButton url="/proyecto/diseno" blank={false}>
+                Ver Principios de Diseño de Usabilidad
+              </MainButton></FeatureItemGestalt>
+
+
+          </div>
+        </div>
+        <div className="w-full flex justify-center">
+          <a
+            href="https://www.roblox.com/es/games/126528065133946/SpaceSILENS#!/about"
+            target="_blank"
+            className="hover:scale-105 transition-transform duration-300 ease-in-out"
+          >
+            <motion.img
+              initial="hidden"
+              whileInView="visible"
+              variants={bannerImage}
+              className="object-cover h-[500px]"
+              src="/logo-juego-atrapados.webp"
+              alt="shopify"
+            />
+          </a>
+        </div>
       </div>
       <div className="min-h-screen bg-white"><TimeLineProyecto /></div>
     </>
