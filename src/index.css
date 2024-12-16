@@ -114,3 +114,17 @@ button {
 .footer-icon {
   @apply w-8 h-auto object-cover opacity-70 hover:opacity-100 transition-all duration-200 ease-in;
 }
+
+/* Efecto de rebote */
+.bounce {
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}

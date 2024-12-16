@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import NavbarDropdown from "./navbarDropdown";
+import ChatBot from "../Chatbot";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,6 +61,16 @@ export default function Navbar() {
     };
   }, [scrollPos]);
 
+  const [showTooltip, setShowTooltip] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowTooltip(false);
+    }, 1000); // La nubecita desaparece después de 1 segundo
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <nav
       id="init"
@@ -108,8 +119,8 @@ export default function Navbar() {
                 <Link
                   to={`/${path}`}
                   className={`relative navlink ${selectedItem === name
-                      ? "text-primary-100 font-bold"
-                      : "text-black-200"
+                    ? "text-primary-100 font-bold"
+                    : "text-black-200"
                     } transition-colors duration-300 ease-in-out`}
                   onClick={() => handleItemClick(name)}
                 >
@@ -129,6 +140,7 @@ export default function Navbar() {
 
         <NavbarDropdown isOpen={isOpen} />
       </div>
+      <ChatBot />
     </nav>
   );
 }
