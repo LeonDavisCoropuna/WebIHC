@@ -134,7 +134,7 @@ export default function proyecto() {
                                         {item.content[0]}
                                     </Paragraph>
                                 </div>
-                            )}
+                            )} 
 
 
                             <AnimatePresence>
