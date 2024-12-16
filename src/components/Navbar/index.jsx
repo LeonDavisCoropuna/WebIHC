@@ -80,7 +80,7 @@ export default function Navbar() {
       <div className="container mx-auto max-w-[1344px]">
         <div className="h-16 md:h-20 p-5 md:py-6 lg:px-5 flex items-center justify-between bg-tertiary-300 transition-colors duration-300">
           <div onClick={handleOpen} className="w-max">
-            <a href="#">
+            <a href="/">
               <img
                 className="h-10 md:h-16 lg:h-15 w-auto z-20 relative"
                 src="/logo-ihc.png"
