@@ -122,15 +122,15 @@ export default function proyecto() {
                                     animate={{ rotate: expandedItems[item.id] ? 180 : 0 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <FaChevronDown className='hover:scale-150 cursor-pointer' />
+                                    <FaChevronDown className='hover:scale-150 cursor-pointer duration-200' />
                                 </motion.div>
 
                             </div>
                             <div className="px-5 py-2.5 flex items-center justify-between border-b border-gray-300">
                             </div>
                             {!expandedItems[item.id] && (
-                                <div className='max-h-14 overflow-hidden'>
-                                    <Paragraph style="">
+                                <div className="max-h-18 overflow-hidden">
+                                    <Paragraph style="bg-gradient-to-b from-black-100 to-white bg-clip-text text-transparent">
                                         {item.content[0]}
                                     </Paragraph>
                                 </div>
@@ -140,7 +140,7 @@ export default function proyecto() {
                             <AnimatePresence>
                                 {expandedItems[item.id] && (
                                     <button
-                                        className="relative w-full block cursor-pointer hover:scale-105 duration-200 bg-transparent"
+                                        className="relative w-full block cursor-pointer hover:scale-105 duration-200 bg-transparent text-left"
                                         onClick={() => openModal(index + 1)}
                                     >
                                         <motion.div
@@ -150,16 +150,10 @@ export default function proyecto() {
                                             exit={{ opacity: 0, height: 0 }}
                                             transition={{ duration: 0.3 }}
                                         >
-
-
                                             {/* Contenedor del párrafo */}
                                             {item.content.map((paragraph, i) => (
                                                 <div className="p-1" key={i}>
-                                                    <div
-                                                        className={`transition-all duration-300 ease-out overflow-hidden ${expandedItems[item.id] ? 'max-h-none opacity-100' : 'max-h-16 opacity-75'}`} // Animación y transiciones
-                                                    >
-                                                        <Paragraph>{paragraph}</Paragraph>
-                                                    </div>
+                                                    <Paragraph>{paragraph}</Paragraph>
                                                 </div>
                                             ))}
 

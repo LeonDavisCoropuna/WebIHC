@@ -178,12 +178,13 @@ export default function Timeline() {
 
             <div className="px-5 py-2.5 flex items-center justify-between border-b border-gray-300" />
             {!expandedItems[item.id] && (
-              <div className='max-h-14 overflow-hidden'>
-                <Paragraph style="">
+              <div className="max-h-18 overflow-hidden">
+                <Paragraph style="bg-gradient-to-b from-black-100 to-white bg-clip-text text-transparent">
                   {item.content[0]}
                 </Paragraph>
               </div>
             )}
+
             <AnimatePresence>
               {expandedItems[item.id] && (
                 <motion.div
@@ -198,7 +199,7 @@ export default function Timeline() {
                   {item.content.map((paragraph, i) => (
                     <div className="p-1" key={i}>
                       <div
-                        className={`transition-all duration-300 ease-out overflow-hidden ${expandedItems[item.id] ? 'max-h-none opacity-100' : 'max-h-16 opacity-75'}`} // Animación y transiciones
+                        className={`transition-all duration-300 ease-out  text-left'}`} // Animación y transiciones
                       >
                         <Paragraph>{paragraph}</Paragraph>
                       </div>
