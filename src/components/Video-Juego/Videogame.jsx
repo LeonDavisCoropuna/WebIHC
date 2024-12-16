@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Arrow from '../Atoms/arrow';
 import { motion } from "framer-motion"
 import SubHead from '../Atoms/subhead';
@@ -54,10 +54,86 @@ export default function VideoJuego() {
                 "El juego se desarrolla en Roblox Studio, aprovechando las capacidades de realidad virtual de Meta Quest 2. Estas herramientas permiten crear un entorno inmersivo, ofreciendo una experiencia de juego única donde los jugadores interactúan de manera natural. La combinación de VR y Roblox eleva la jugabilidad a un nuevo nivel.",
         },
     ];
+    const [progress, setProgress] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY; // Posición actual del scroll
+            const windowHeight = window.innerHeight; // Altura visible del viewport
+            const documentHeight = document.documentElement.scrollHeight; // Altura total del documento
+
+            const totalScrollable = documentHeight - windowHeight; // Altura que se puede recorrer
+            const progressPercentage = (scrollTop / totalScrollable) * 100; // Porcentaje calculado
+            setProgress(progressPercentage); // Actualizar estado
+        };
+
+        // Agregar evento de scroll
+        window.addEventListener("scroll", handleScroll);
+
+        // Limpieza del evento al desmontar el componente
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <>
             <div className="bg-tertiary-300-100 min-h-screen flex flex-col justify-center items-center py-16" id="video-juego">
+                <svg
+                    className="fixed top-[6rem] right-5 bg-white rounded-full shadow-lg"
+                    width="80"
+                    height="80"
+                    style={{
+                        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
+                    }}
+                >
+                    {/* Gradiente para el borde */}
+                    <defs>
+                        <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#c8fccb" stopOpacity="1" />
+                            <stop offset="100%" stopColor="#004703" stopOpacity="0.8" />
+                        </linearGradient>
+                    </defs>
+
+                    {/* Círculo de fondo (gris claro) */}
+                    <circle
+                        cx="40"
+                        cy="40"
+                        r="30"
+                        stroke="#E5E7EB"
+                        strokeWidth="6"
+                        fill="none"
+                    />
+
+                    {/* Círculo de progreso */}
+                    <circle
+                        cx="40"
+                        cy="40"
+                        r="30"
+                        stroke="url(#progressGradient)"
+                        strokeWidth="6"
+                        fill="none"
+                        strokeDasharray="188.4" /* Circunferencia total: 2 * Math.PI * 30 */
+                        strokeDashoffset={-188.4 + (progress / 100) * 188.4}
+                        strokeLinecap="round"
+                        transform="rotate(270 40 40)" /* Rota el progreso para comenzar desde arriba */
+                        style={{
+                            transition: "stroke-dashoffset 0.3s ease-in-out",
+                        }}
+                    />
+
+                    {/* Texto centrado con el porcentaje */}
+                    <text
+                        x="40"
+                        y="45"
+                        textAnchor="middle"
+                        fontSize="16"
+                        fontWeight="bold"
+                        fill="#4F46E5"
+                    >
+                        {Math.round(progress)}%
+                    </text>
+                </svg>
                 <div className="container mx-auto max-w-[1344px]">
                     <div className="flex px-5 py-9 flex-col gap-8 sm:gap-10 md:gap-16 md:pb-0 lg:gap-20 lg:px-10 lg:pt-12 overflow-hidden justify-center items-center">
                         <motion.section

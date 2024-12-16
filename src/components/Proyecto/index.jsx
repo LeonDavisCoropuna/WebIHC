@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { FaFile, FaPlay, FaPlayCircle } from "react-icons/fa";
 import MainButton from "../Atoms/button";
 import Gallery from "react-image-gallery";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { Link } from "react-router-dom";
 import ReactModal from "react-modal";
@@ -48,9 +48,88 @@ export default function Proyecto() {
     hidden: { y: -100, opacity: 0 },
   };
 
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY; // Posición actual del scroll
+      const windowHeight = window.innerHeight; // Altura visible del viewport
+      const documentHeight = document.documentElement.scrollHeight; // Altura total del documento
+
+      const totalScrollable = documentHeight - windowHeight; // Altura que se puede recorrer
+      const progressPercentage = (scrollTop / totalScrollable) * 100; // Porcentaje calculado
+      setProgress(progressPercentage); // Actualizar estado
+    };
+
+    // Agregar evento de scroll
+    window.addEventListener("scroll", handleScroll);
+
+    // Limpieza del evento al desmontar el componente
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
   return (
     <>
       <div id="proyecto-final" className="container mx-auto max-w-[1344px] min-h-screen items-center justify-center flex py-10">
+        <svg
+          className="fixed top-[6rem] right-5 bg-white rounded-full shadow-lg"
+          width="80"
+          height="80"
+          style={{
+            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
+          }}
+        >
+          {/* Gradiente para el borde */}
+          <defs>
+            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#c8fccb" stopOpacity="1" />
+              <stop offset="100%" stopColor="#004703" stopOpacity="0.8" />
+            </linearGradient>
+          </defs>
+
+          {/* Círculo de fondo (gris claro) */}
+          <circle
+            cx="40"
+            cy="40"
+            r="30"
+            stroke="#E5E7EB"
+            strokeWidth="6"
+            fill="none"
+          />
+
+          {/* Círculo de progreso */}
+          <circle
+            cx="40"
+            cy="40"
+            r="30"
+            stroke="url(#progressGradient)"
+            strokeWidth="6"
+            fill="none"
+            strokeDasharray="188.4" /* Circunferencia total: 2 * Math.PI * 30 */
+            strokeDashoffset={-188.4 + (progress / 100) * 188.4}
+            strokeLinecap="round"
+            transform="rotate(270 40 40)" /* Rota el progreso para comenzar desde arriba */
+            style={{
+              transition: "stroke-dashoffset 0.3s ease-in-out",
+            }}
+          />
+
+          {/* Texto centrado con el porcentaje */}
+          <text
+            x="40"
+            y="45"
+            textAnchor="middle"
+            fontSize="16"
+            fontWeight="bold"
+            fill="#4F46E5"
+          >
+            {Math.round(progress)}%
+          </text>
+        </svg>
+
         <div className="px-5 py-16 flex flex-col gap-10 sm:pb-28 sm:px-10 md:pb-36 ">
           {/* Head Content */}
           <motion.div

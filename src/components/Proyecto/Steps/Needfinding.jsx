@@ -41,13 +41,13 @@ export default function Needfinding() {
     };
     return (
         <>
-            <div className="min-h-screen bg-white justify-center items-center flex flex-col">
+            <div className=" bg-white justify-center items-center flex flex-col">
                 <SubHead style="text-center">
                     Etapa 2 - Needfinding
                 </SubHead>
                 <div className="flex gap-x-12 ">
                     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS2AY6tgD6d-k0nd7TtDSn5zwn1l9xXUQtGds1-XVrInP-dgtC_W9VWoAw5Ln3jmQ/embed?start=false&loop=false&delayms=3000"
-                        frameborder="0" width="850" height="700" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                        frameborder="0" width="850" height="600" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
                     <div className="justify-between flex flex-col">
                         {videos.map((video) => (

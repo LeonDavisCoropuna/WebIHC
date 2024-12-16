@@ -1,7 +1,7 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-import { FaStar, FaPlay, FaClock, FaCheck, FaChevronDown, FaChevronUp } from 'react-icons/fa'; // Importa iconos adicionales
+import { FaStar, FaPlay, FaClock, FaCheck, FaChevronDown } from 'react-icons/fa'; // Importa iconos adicionales
 
 import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
@@ -114,68 +114,103 @@ export default function proyecto() {
                             }}
                             icon={item.status === 'completed' ? <FaCheck /> : <FaClock />}
                         >
-                            <div className="flex justify-between items-center">
+                            <div className="flex justify-between items-center transition-transform duration-200 focus:outline-none cursor-pointer" onClick={() => toggleExpand(item.id)}>
                                 <h4 className="text-xs text-primary-100 font-medium sm:text-base lg:text-2xl">
                                     {item.title}
                                 </h4>
-                                <button onClick={() => toggleExpand(item.id)} className="text-primary-100 hover:text-primary-200">
-                                    {expandedItems[item.id] ? <FaChevronUp /> : <FaChevronDown />}
-                                </button>
+                                <motion.div
+                                    animate={{ rotate: expandedItems[item.id] ? 180 : 0 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    <FaChevronDown className='hover:scale-150 cursor-pointer' />
+                                </motion.div>
+
                             </div>
+                            <div className="px-5 py-2.5 flex items-center justify-between border-b border-gray-300">
+                            </div>
+                            {!expandedItems[item.id] && (
+                                <div className='max-h-14 overflow-hidden'>
+                                    <Paragraph style="">
+                                        {item.content[0]}
+                                    </Paragraph>
+                                </div>
+                            )}
+
 
                             <AnimatePresence>
                                 {expandedItems[item.id] && (
-                                    <motion.div
-                                        key="content" // clave única para animaciones de entrada y salida
-                                        initial={{ opacity: 0, height: 0 }}
-                                        animate={{ opacity: 1, height: 'auto' }}
-                                        exit={{ opacity: 0, height: 0 }}
-                                        transition={{ duration: 0.3 }}
+                                    <button
+                                        className="relative w-full block cursor-pointer hover:scale-105 duration-200 bg-transparent"
+                                        onClick={() => openModal(index + 1)}
                                     >
-                                        <div className="px-5 py-2.5 flex items-center justify-between border-b border-gray-300">
+                                        <motion.div
+                                            key="content"
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                        >
 
-                                        </div>
-                                        {item.content.map((pagraph, i) => (
-                                            <div className="p-1" key={i}>
-                                                <Paragraph>{pagraph}</Paragraph>
-                                            </div>
-                                        ))}
-                                        <button className='hover:scale-105 duration-200' onClick={() => openModal(index+1)}>
-                                            <img src={item.img} alt='Imagen' />
-                                        </button>
-                                    </motion.div>
+
+                                            {/* Contenedor del párrafo */}
+                                            {item.content.map((paragraph, i) => (
+                                                <div className="p-1" key={i}>
+                                                    <div
+                                                        className={`transition-all duration-300 ease-out overflow-hidden ${expandedItems[item.id] ? 'max-h-none opacity-100' : 'max-h-16 opacity-75'}`} // Animación y transiciones
+                                                    >
+                                                        <Paragraph>{paragraph}</Paragraph>
+                                                    </div>
+                                                </div>
+                                            ))}
+
+                                            {/* Imagen */}
+                                            <img src={item.img} alt="Imagen" className="rounded-lg mt-2" />
+                                        </motion.div>
+                                    </button>
                                 )}
                             </AnimatePresence>
                         </VerticalTimelineElement>
                     ))}
+
                     <VerticalTimelineElement
                         iconStyle={{ background: '#145a32', color: '#fff' }}
                         icon={<FaStar />}
                     />
                 </VerticalTimeline>
             </div>
-            <ReactModal
-                isOpen={isOpen}
-                onRequestClose={closeModal}
-                contentLabel="Video Modal"
-                style={{
-                    content: {
-                        top: '50%',
-                        left: '50%',
-                        right: 'auto',
-                        bottom: 'auto',
-                        marginRight: '-50%',
-                        transform: 'translate(-50%, -50%)',
-                        width: '80%',
-                        height: '80%',
-                    },
-                    overlay: { backgroundColor: 'rgba(0, 0, 0, 0.8)' },
-                }}
-            >
-                {selectedItem == 1 && <Document />}
-                {selectedItem == 2 && <Needfinding />}
-                {selectedItem == 3 && <StoryBoard />}
-            </ReactModal>
+            <AnimatePresence>
+                {isOpen && (
+                    <ReactModal
+                        isOpen={isOpen}
+                        onRequestClose={closeModal}
+                        contentLabel="Video Modal"
+                        style={{
+                            content: {
+                                top: '50%',
+                                left: '50%',
+                                right: 'auto',
+                                bottom: 'auto',
+                                marginRight: '-50%',
+                                transform: 'translate(-50%, -50%)',
+                                width: '80%',
+                                height: '80%',
+                            },
+                            overlay: { backgroundColor: 'rgba(0, 0, 0, 0.1)' },
+                        }}
+                    >
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            {selectedItem === 1 && <Document />}
+                            {selectedItem === 2 && <Needfinding />}
+                            {selectedItem === 3 && <StoryBoard />}
+                        </motion.div>
+                    </ReactModal>
+                )}
+            </AnimatePresence>
         </>
     );
 }

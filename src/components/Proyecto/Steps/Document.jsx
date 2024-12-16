@@ -1,10 +1,11 @@
-import React from 'react'
 import SubHead from '../../Atoms/subhead'
 
 export default function Document() {
+
     return (
-        <div><div id="doc"/>
-            <div className="min-h-screen bg-primary-300 justify-center items-center flex flex-col">
+        <div className='overflow-hidden'>
+            <div id="doc" />
+            <div className="bg-primary-300 justify-center items-center flex flex-col">
                 <SubHead style="text-center py-4" color="text-white">
                     Etapa 1 - Documento
                 </SubHead>
@@ -14,7 +15,7 @@ export default function Document() {
                     height="800px"
                     title="PDF Viewer"
                 ></iframe>
-
-            </div></div>
-    )
+            </div>
+        </div>
+    );
 }

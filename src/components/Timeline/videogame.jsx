@@ -7,6 +7,7 @@ import { FaStar, FaPlay, FaClock, FaCheck, FaChevronDown, FaChevronUp } from 're
 import React, { useState } from 'react'
 import FeatureItemImage from '../Proyecto/featureItemImage';
 import { AnimatePresence, motion } from 'framer-motion';
+import Paragraph from '../Atoms/paragraph';
 
 export default function Timeline() {
   const items = [
@@ -162,25 +163,50 @@ export default function Timeline() {
             }}
             icon={item.status === 'completed' ? <FaCheck /> : <FaClock />}
           >
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center transition-transform duration-200 focus:outline-none cursor-pointer" onClick={() => toggleExpand(item.id)}>
               <h4 className="text-xs text-primary-100 font-medium sm:text-base lg:text-2xl">
                 {item.title}
               </h4>
-              <button onClick={() => toggleExpand(item.id)} className="text-primary-100 hover:text-primary-200">
-                {expandedItems[item.id] ? <FaChevronUp /> : <FaChevronDown />}
-              </button>
+              <motion.div
+                animate={{ rotate: expandedItems[item.id] ? 180 : 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <FaChevronDown className='hover:scale-150 cursor-pointer' />
+              </motion.div>
+
             </div>
 
+            <div className="px-5 py-2.5 flex items-center justify-between border-b border-gray-300" />
+            {!expandedItems[item.id] && (
+              <div className='max-h-14 overflow-hidden'>
+                <Paragraph style="">
+                  {item.content[0]}
+                </Paragraph>
+              </div>
+            )}
             <AnimatePresence>
               {expandedItems[item.id] && (
                 <motion.div
-                  key="content" // clave única para animaciones de entrada y salida
+                  key="content"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <FeatureItemImage key={item.id} feature={item} index={item.id} />
+
+                  {/* Contenedor del párrafo */}
+                  {item.content.map((paragraph, i) => (
+                    <div className="p-1" key={i}>
+                      <div
+                        className={`transition-all duration-300 ease-out overflow-hidden ${expandedItems[item.id] ? 'max-h-none opacity-100' : 'max-h-16 opacity-75'}`} // Animación y transiciones
+                      >
+                        <Paragraph>{paragraph}</Paragraph>
+                      </div>
+                    </div>
+                  ))}
+
+                  {/* Imagen */}
+                  <img src={item.img} alt="Imagen" className="rounded-lg mt-2" />
                 </motion.div>
               )}
             </AnimatePresence>

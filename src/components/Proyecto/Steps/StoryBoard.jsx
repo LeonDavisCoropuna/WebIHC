@@ -45,7 +45,7 @@ export default function StoryBoard() {
         }
     ]
     return (
-        <div className="min-h-screen bg-primary-300 items-center justify-center flex flex-col">
+        <div className=" bg-primary-300 items-center justify-center flex flex-col">
             <SubHead style="text-center py-4" color="text-white">
                 Etapa 3 - Story Board
             </SubHead>
