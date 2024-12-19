@@ -167,7 +167,7 @@ export default function VideoJuego() {
                                 content:
                                     "El principio de Gestalt describe cómo la percepción visual humana tiende a organizar los elementos en formas completas, en lugar de ver partes aisladas. Estos principios, como Proximidad, Similitud y Cierre, son ampliamente usados en diseño gráfico y de interfaces para mejorar la claridad visual.",
                             }}><MainButton url="/video-juego/gestalt" blank={false} >
-                                    Ver Principios de Gestald
+                                    Ver Principios de Gestalt
                                 </MainButton></FeatureItemGestalt>
 
                         </div>

@@ -10,7 +10,10 @@ import ReactModal from 'react-modal';
 import StoryBoard from '../Proyecto/Steps/StoryBoard';
 import Document from '../Proyecto/Steps/Document';
 import Needfinding from '../Proyecto/Steps/Needfinding';
-
+import Entrevistas from '../Proyecto/Steps/Entrevistas';
+import Implementation4_1 from "../Proyecto/Steps/Implementation4_2"
+import Implementation4_2 from "../Proyecto/Steps/Implementation4_1"
+import PruebasUsuarios from "../Proyecto/Steps/PruebasUsuarios"
 export default function proyecto() {
     const items = [
         {
@@ -51,18 +54,70 @@ export default function proyecto() {
             status: "completed",
             date: "20 de Septiembre - 2024",
             right: true
+        },
+        {
+            id: 4,
+            title: "Etapa 4.1 - Patrones, diseños y prácticas usadas",
+            logo: "/feature-2.svg",
+            content: [
+                "En esta etapa, se implementó el videojuego siguiendo patrones de diseño en videojugos, principios de gestalt y conocimientos adquiridos en clase.",
+                "Esta etapa permitió plasmar todos nuestros conocimientos de patrones diseño, asismismo se realizó una mejora continúa con feedback proporcionado en clase "
+            ],
+            img: "https://i.ibb.co/0Mgch1q/image.png",
+            status: "completed",
+            date: "28 de noviembre - 2024",
+            right: false
+        },
+        {
+            id: 5,
+            title: "Etapa 4.2 - ¿Cómo se abordaron las necesidades?",
+            logo: "/feature-2.svg",
+            content: [
+                "En esta etapa, se implementó el videojuego siguiendo patrones de diseño en videojugos, principios de gestalt y conocimientos adquiridos en clase.",
+                "Esta etapa permitió plasmar todos nuestros conocimientos de patrones diseño, asismismo se realizó una mejora continúa con feedback proporcionado en clase "
+            ],
+            img: "https://i.ibb.co/0Mgch1q/image.png",
+            status: "completed",
+            date: "18 de noviembre - 2024",
+            right: false
+        },
+        {
+            id: 6,
+            title: "Etapa 5 - Pruebas en Jugabilidad",
+            logo: "/feature-3.svg",
+            content: [
+                "En esta etapa, se realizaron pruebas de jugabilidad sobre el videojuego planteado con el fin de identificar aspectos a mejorar.",
+                "Realizar estas pruebas permitió encontrar puntos de vista distintos que nutrieron nuestra noción y planteamiento de obstaáculos y desafios."
+            ],
+            img: "https://media.discordapp.net/attachments/1285073468475441173/1319225247467307108/image.png?ex=67652fc1&is=6763de41&hm=29f995c0f23a9447e35a15a1864f54e9d4465902c3111e466a00690d93c66170&=&format=webp&quality=lossless&width=1126&height=632",
+            status: "completed",
+            date: "17 de Diciembre - 2024",
+            right: true
+        },
+        {
+            id: 7,
+            title: "Etapa 6 - Entrevistas",
+            logo: "/feature-3.svg",
+            content: [
+                "En esta etapa, se realizaron entrevistas con usuarios para identificar sus necesidades y perspectivas clave relacionadas con los videojuegos de acertijos cooperativos.",
+                "Los resultados obtenidos sirvieron como base para definir los requerimientos de diseño del juego."
+            ],
+            img: "https://i.ibb.co/tY5SkHW/image.png",
+            status: "completed",
+            date: "17 de Diciembre - 2024",
+            right: true
         }
     ];
 
     const [expandedItems, setExpandedItems] = useState({
-        "1": true,
+        "1": false,
         "2": true,
-        "3": true,
-        "4": true,
+        "3": false,
+        "4": false,
         "5": true,
-        6: true,
-        7: true,
-        8: true
+        "6": true,
+        "7": true,
+        "8": true
     });
 
     // Alterna el estado de expansión de un elemento específico
@@ -201,6 +256,11 @@ export default function proyecto() {
                             {selectedItem === 1 && <Document />}
                             {selectedItem === 2 && <Needfinding />}
                             {selectedItem === 3 && <StoryBoard />}
+                            {selectedItem === 4 && <Implementation4_1 />}
+                            {selectedItem === 5 && <Implementation4_2/>}
+                            {selectedItem === 6 && <PruebasUsuarios />}
+                            {selectedItem === 7 && <Entrevistas />}
+
                         </motion.div>
                     </ReactModal>
                 )}
