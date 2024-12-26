@@ -40,7 +40,7 @@ export default function Navbar() {
     const pathToItem = {
       "": "Inicio",
       "/proyecto": "Proyecto Final",
-      "/video-juego": "Video Juego",
+      "/video-juego": "Videojuego",
       "/nosotros": "Nosotros",
     };
 
@@ -112,7 +112,7 @@ export default function Navbar() {
             {[
               { name: "Inicio", path: "" },
               { name: "Proyecto Final", path: "proyecto" },
-              { name: "Video Juego", path: "video-juego" },
+              { name: "Videojuego", path: "video-juego" },
               { name: "Nosotros", path: "nosotros" },
             ].map(({ name, path }) => (
               <div key={name} className="relative group">

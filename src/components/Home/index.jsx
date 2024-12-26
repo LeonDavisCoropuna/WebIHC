@@ -36,7 +36,7 @@ export default function Hero() {
             </MainButton>
 
             <MainButton primary icon={<FaGamepad />} url="/video-juego" blank={false}>
-              Video Juego
+              Videojuego
             </MainButton>
           </div>
         </div>

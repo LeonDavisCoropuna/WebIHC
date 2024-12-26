@@ -144,7 +144,7 @@ export default function VideoJuego() {
               className="text-center space-y-[18px] flex flex-col items-center"
             >
               <SubHead style="sm:w-4/5 md:w-9/12 lg:w-9/12">
-                Video juego Realidad Virtual - Atrapados
+                Videojuego Realidad Virtual - Atrapados
               </SubHead>
               <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-2 overflow-hidden">
                 {dataFeatures?.map((feature, index) => (

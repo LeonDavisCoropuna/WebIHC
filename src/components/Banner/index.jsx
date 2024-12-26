@@ -27,7 +27,7 @@ export default function Banner() {
             className="text-center space-y-[18px] flex flex-col items-center"
           >
             <SubHead color="text-white" style="sm:w-4/5 md:w-9/12 lg:w-9/12">
-              Video juego Realidad Virtual - Atrapados
+              Videojuego Realidad Virtual - Atrapados
             </SubHead>
             <Paragraph
               color="text-white/70"
