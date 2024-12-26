@@ -32,11 +32,11 @@ const EntrevistasFinal = () => {
     <>
       <div className=" bg-white justify-center items-center flex flex-col">
         <SubHead style="text-center">
-          Etapa 9 - Entrevistas
+          Etapa 11 - Entrevistas y Pruebas Finales
         </SubHead>
         <div className="flex gap-x-12 ">
           <iframe
-            src={`https://www.youtube.com/embed/OZwFfvowXW0`}
+            src={`https://www.youtube.com/embed/fuKvobX7V2o`}
             height={600}
             width={900}
             allowFullScreen
