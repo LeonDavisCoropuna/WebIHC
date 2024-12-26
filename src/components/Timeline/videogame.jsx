@@ -111,7 +111,7 @@ export default function Timeline() {
         "Se eliminaron las nubes para mantener la consistencia, basando el diseño en los colores asociados a los roles de los jugadores."
       ],
       img: "/juegov4.png",
-      status: "in progress",
+      status: "completed",
       date: "24 de Octubre - 2024",
       right: false
     }

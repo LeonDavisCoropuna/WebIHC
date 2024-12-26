@@ -20,7 +20,7 @@ export default function MainButton({ children, primary, style, icon, url, blank 
       onClick={handleClick}
       className={`${primary
         ? "border border-primary-100 bg-primary-100 text-tertiary-200"
-        : "border border-primary-100 bg-tertiary-300 text-primary-100"
+        : "border border-primary-100 bg-primary-100 text-tertiary-300"
         } flex items-center justify-center gap-2 p-5 text-lg uppercase font-body font-bold md:px-[34px] md:py-5 lg:w-full ${style} hover:bg-gray-600`}
     >
       {icon && <span className="text-2xl">{icon}</span>}

@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
-import SubHead from '../../Atoms/subhead'
-import { FaPlayCircle } from 'react-icons/fa'
+import { FaPlayCircle } from 'react-icons/fa';
 import ReactModal from 'react-modal';
+import SubHead from '../../Atoms/subhead';
 
-export default function Needfinding() {
+const Jugabilidad2 = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   const videos = [
     {
-      id: "_9JoKg-ymIw",
+      id: "WopGCSC4iSU",
       title: "Perspectiva individual",
       description: "Este video simula la experiencia de un jugador controlando a uno de los personajes. Se enfoca en la interacción con el entorno, la resolución de desafíos específicos y la coordinación necesaria con los demás jugadores."
     },
     {
-      id: "uxwiNXEgAjA",
+      id: "jN4uegwykXE",
       title: "Perspectiva Global",
       description: "En este video, se presenta una vista general de los tres personajes en acción. Esto permite observar cómo se complementan las habilidades y roles de los jugadores para superar los obstáculos y alcanzar los objetivos del juego."
     }
@@ -32,7 +32,7 @@ export default function Needfinding() {
   return (
     <div className=" bg-white justify-center items-center flex flex-col">
       <SubHead style="text-center">
-        Etapa 5 - Pruebas de Jugabilidad
+        Etapa 10 - Explicación de Interfaz y Pruebas de Jugabilidad Final
       </SubHead>
       <div className='flex gap-x-3'>
         <iframe
@@ -46,7 +46,7 @@ export default function Needfinding() {
             <button
               key={video.id}
               className="bg-primary-300 rounded-lg shadow-md p-4 cursor-pointer w-[350px] flex flex-col 
-            justify-self-center items-center gap-y-2 border border-primary-100 text-black hover:bg-gray-600 shadow-black-100"
+          justify-self-center items-center gap-y-2 border border-primary-100 text-black hover:bg-gray-600 shadow-black-100"
               onClick={() => openModal(video)}
             >
               <FaPlayCircle size={50} color="white" />
@@ -89,3 +89,5 @@ export default function Needfinding() {
 
   )
 }
+
+export default Jugabilidad2

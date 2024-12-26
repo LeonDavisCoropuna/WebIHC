@@ -8,6 +8,8 @@ import Gestalt from "./components/Video-Juego/Gestalt";
 import Usability from "./components/Video-Juego/Usability";
 import Design from "./components/Video-Juego/Design";
 import Proyecto from "./components/Proyecto";
+import GestaltProyect from "./components/Proyecto/GestaltProyect";
+import UsabilidadProyecto from "./components/Proyecto/UsabilidadProyecto";
 export default function App() {
   return (
     <BrowserRouter>
@@ -15,12 +17,10 @@ export default function App() {
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="proyecto" element={<Proyecto />} />
-        <Route path="proyecto/gestalt" element={<Gestalt />} />
-        <Route path="proyecto/usabilidad" element={<Usability />} />
-        <Route path="proyecto/diseno" element={<Design />} />
+        <Route path="proyecto/gestalt" element={<GestaltProyect />} />
+        <Route path="proyecto/diseno" element={<UsabilidadProyecto />} />
         <Route path="video-juego" element={<Videogame />} />
         <Route path="video-juego/gestalt" element={<Gestalt />} />
-        <Route path="video-juego/usabilidad" element={<Usability />} />
         <Route path="video-juego/diseno" element={<Design />} />
         <Route path="nosotros" element={<About />} />
       </Routes>
