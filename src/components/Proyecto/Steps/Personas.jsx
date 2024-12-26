@@ -6,7 +6,7 @@ export default function Personas() {
   return (
     <div className=" bg-white justify-center items-center flex flex-col">
       <SubHead style="text-center">
-        Etapa 3 - Personas
+        Etapa 4 - Personas
       </SubHead>
       <div className='flex gap-x-3'>
         <div className="flex gap-x-12 ">

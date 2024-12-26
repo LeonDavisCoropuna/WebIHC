@@ -6,7 +6,7 @@ export default function Implementation4_1() {
     return (
         <div className=" bg-white justify-center items-center flex flex-col">
             <SubHead style="text-center">
-                Etapa 4.1 - Patrones, diseños y prácticas usadas
+                Etapa 6 - Patrones, diseños y prácticas usadas
             </SubHead>
             <div className='flex gap-x-3'>
                 <div className="flex gap-x-12 ">

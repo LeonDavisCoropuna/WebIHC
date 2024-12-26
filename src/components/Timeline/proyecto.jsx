@@ -17,6 +17,7 @@ import PruebasUsuarios from "../Proyecto/Steps/PruebasUsuarios"
 import Personas from '../Proyecto/Steps/Personas';
 import Logo from '../Proyecto/Steps/Logo';
 import Jugabilidad2 from '../Proyecto/Steps/Jugabilidad2';
+import EntrevistasFinal from '../Proyecto/Steps/EntrevistasFinal';
 export default function proyecto() {
   const items = [
     {
@@ -24,8 +25,8 @@ export default function proyecto() {
       title: "Etapa 1 - Diseño del Logo",
       logo: "/feature-1.svg",
       content: [
-        "En la primera etapa se diseñó el logo del proyecto el cual busca reflejar el objetivo.",
-        "Este logo tomó en cuenta los principios y recomendaciones seguidas en clase."
+        "En la primera etapa se diseñó el logo del proyecto con el propósito de reflejar su objetivo principal.",
+        "El diseño se basó en los principios y recomendaciones vistas en clase, buscando una representación visual clara y coherente."
       ],
       img: "/logo-ihc.png",
       status: "completed",
@@ -37,8 +38,8 @@ export default function proyecto() {
       title: "Etapa 2 - Documento Inicial",
       logo: "/feature-1.svg",
       content: [
-        "En esta etapa, se creó un documento inicial que incluye la definición del problema, los objetivos del proyecto y los usuarios objetivo.",
-        "Este documento es accesible para todos los involucrados en el desarrollo."
+        "Se elaboró un documento inicial que define el problema, establece los objetivos del proyecto y describe a los usuarios objetivo.",
+        "Este documento se compartió con todos los participantes involucrados para asegurar una comprensión común desde el inicio."
       ],
       img: "https://i.ibb.co/ZLPkZkL/image.png",
       status: "completed",
@@ -50,8 +51,8 @@ export default function proyecto() {
       title: "Etapa 3 - Needfinding",
       logo: "/feature-2.svg",
       content: [
-        "En esta etapa, se realizaron entrevistas con usuarios para identificar sus necesidades y perspectivas clave relacionadas con los videojuegos de acertijos cooperativos.",
-        "Los resultados obtenidos sirvieron como base para definir los requerimientos de diseño del juego."
+        "Se llevaron a cabo entrevistas con usuarios para identificar sus necesidades y recopilar perspectivas clave relacionadas con videojuegos de acertijos cooperativos.",
+        "Los resultados sirvieron como base para establecer los requisitos de diseño del videojuego."
       ],
       img: "https://i.ibb.co/hmQXr2J/image.png",
       status: "completed",
@@ -63,8 +64,8 @@ export default function proyecto() {
       title: "Etapa 4 - Personas",
       logo: "/feature-2.svg",
       content: [
-        "En esta etapa se definieron los tipos de personas a las cuales se tiene como objetivo del proyecto.",
-        "Los modelos de personas nos sirvieron para diseñar un videojuego coherente a sus necesidades."
+        "Se definieron perfiles de usuarios objetivo mediante el desarrollo de modelos de personas.",
+        "Estos modelos guiaron el diseño del videojuego, asegurando que respondiera a las necesidades y expectativas del público objetivo."
       ],
       img: "https://i.ibb.co/mzBPgQm/Captura-desde-2024-12-26-02-55-12.png",
       status: "completed",
@@ -76,8 +77,8 @@ export default function proyecto() {
       title: "Etapa 5 - Storyboard",
       logo: "/feature-3.svg",
       content: [
-        "En esta etapa, se diseñó el videojuego utilizando dibujos a mano en papelotes para representar las necesidades identificadas.",
-        "El storyboard permitió visualizar cómo los jugadores interactuarían con el juego y cómo avanzarían resolviendo acertijos."
+        "Se crearon storyboards utilizando dibujos a mano en papel para representar las necesidades y expectativas identificadas previamente.",
+        "El storyboard ayudó a visualizar cómo los jugadores interactuarían con el videojuego y progresarían resolviendo acertijos."
       ],
       img: "/storyboard.png",
       status: "completed",
@@ -86,24 +87,24 @@ export default function proyecto() {
     },
     {
       id: 6,
-      title: "Etapa 6 - Patrones, diseños y prácticas usadas",
+      title: "Etapa 6 - Patrones, Diseños y Prácticas Usadas",
       logo: "/feature-2.svg",
       content: [
-        "En esta etapa, se implementó el videojuego siguiendo patrones de diseño en videojuegos, principios de gestalt y conocimientos adquiridos en clase.",
-        "Esta etapa permitió plasmar todos nuestros conocimientos de patrones diseño, asimismo se realizó una mejora continua con feedback proporcionado en clase."
+        "Se implementó el videojuego siguiendo patrones de diseño, principios de Gestalt y los conocimientos adquiridos en clase.",
+        "Se aplicaron mejoras continuas basadas en el feedback recibido, logrando integrar teoría y práctica de manera efectiva."
       ],
-      img: "https://i.ibb.co/0Mgch1q/image.png",
+      img: "https://i.ibb.co/PQ0q3pM/Captura-desde-2024-12-26-09-37-15.png",
       status: "completed",
       date: "28 de Noviembre - 2024",
       right: false
     },
     {
       id: 7,
-      title: "Etapa 7 - ¿Cómo se abordaron las necesidades?",
+      title: "Etapa 7 - ¿Cómo se Abordaron las Necesidades?",
       logo: "/feature-2.svg",
       content: [
-        "En esta etapa, se implementó el videojuego siguiendo patrones de diseño en videojuegos, principios de gestalt y conocimientos adquiridos en clase.",
-        "Esta etapa permitió plasmar todos nuestros conocimientos de patrones diseño, asimismo se realizó una mejora continua con feedback proporcionado en clase."
+        "Se implementó el videojuego aplicando principios de diseño y recomendaciones prácticas para garantizar que cumpliera con las necesidades identificadas.",
+        "Las iteraciones del diseño fueron clave para refinar la solución propuesta."
       ],
       img: "https://i.ibb.co/0Mgch1q/image.png",
       status: "completed",
@@ -115,8 +116,8 @@ export default function proyecto() {
       title: "Etapa 8 - Pruebas de Jugabilidad v1",
       logo: "/feature-3.svg",
       content: [
-        "En esta etapa, se realizaron pruebas de jugabilidad sobre el videojuego planteado con el fin de identificar aspectos a mejorar.",
-        "Realizar estas pruebas permitió encontrar puntos de vista distintos que nutrieron nuestra noción y planteamiento de obstáculos y desafíos."
+        "Se realizaron pruebas iniciales de jugabilidad para identificar áreas de mejora en el videojuego.",
+        "Estas pruebas aportaron perspectivas valiosas que enriquecieron el diseño de los retos y obstáculos."
       ],
       img: "https://i.ibb.co/0CNWMFq/image.webp",
       status: "completed",
@@ -128,8 +129,8 @@ export default function proyecto() {
       title: "Etapa 9 - Entrevistas v1",
       logo: "/feature-3.svg",
       content: [
-        "En esta etapa, se realizaron entrevistas con usuarios para identificar sus necesidades y perspectivas clave relacionadas con los videojuegos de acertijos cooperativos.",
-        "Los resultados obtenidos sirvieron como base para definir los requerimientos de diseño del juego."
+        "Se llevaron a cabo entrevistas con usuarios para validar los requisitos de diseño y obtener retroalimentación directa.",
+        "Los resultados confirmaron la alineación del diseño con las necesidades y expectativas de los usuarios."
       ],
       img: "https://i.ibb.co/tY5SkHW/image.png",
       status: "completed",
@@ -141,10 +142,10 @@ export default function proyecto() {
       title: "Etapa 10 - Explicación de Interfaz y Pruebas de Jugabilidad Final",
       logo: "/feature-3.svg",
       content: [
-        "En esta etapa se realizó un video explicativo sobre la interfaz destacando las mejoras con respecto a la interfaz anterior.",
-        "Se presentaron videos sobre la jugabilidad del videojuego en la perspectiva individual y global."
+        "Se elaboró un video explicativo destacando las mejoras de la interfaz respecto a iteraciones previas.",
+        "También se presentaron videos de jugabilidad desde perspectivas individuales y globales."
       ],
-      img: "https://i.ibb.co/tY5SkHW/image.png",
+      img: "https://i.ibb.co/8MkwMjz/nosotros.webp",
       status: "completed",
       date: "23 de Diciembre - 2024",
       right: true
@@ -154,28 +155,28 @@ export default function proyecto() {
       title: "Etapa 11 - Entrevistas y Pruebas Finales",
       logo: "/feature-3.svg",
       content: [
-        "En esta última etapa se realizaron entrevistas y pruebas con los usuarios objetivos abordados en el contexto del proyecto.",
-        "Las entrevistas demostraron que se abordó correctamente la problemática y la solución propuesta para desarrollar habilidades de comunicación."
+        "En la etapa final, se realizaron entrevistas y pruebas con usuarios objetivo para evaluar la solución desarrollada.",
+        "Los resultados confirmaron que el videojuego aborda efectivamente la problemática planteada, promoviendo habilidades de comunicación."
       ],
-      img: "https://i.ibb.co/tY5SkHW/image.png",
+      img: "https://i.ibb.co/j5fG2NT/Captura-desde-2024-12-26-09-32-26.png",
       status: "completed",
       date: "26 de Diciembre - 2024",
       right: true
     }
   ];
 
-
   const [expandedItems, setExpandedItems] = useState({
-    "1": false,
-    "2": true,
+    "1": true,
+    "2": false,
     "3": false,
     "4": false,
-    "5": true,
-    "6": true,
+    "5": false,
+    "6": false,
     "7": true,
     "8": true,
-    "9": false,
-    "10": true
+    "9": true,
+    "10": true,
+    "11": true
   });
 
   // Alterna el estado de expansión de un elemento específico
@@ -321,9 +322,7 @@ export default function proyecto() {
               {selectedItem === 8 && <PruebasUsuarios />}
               {selectedItem === 9 && <Entrevistas />}
               {selectedItem === 10 && <Jugabilidad2 />}
-              {selectedItem === 11 && <></>}
-
-
+              {selectedItem === 11 && <EntrevistasFinal />}
             </motion.div>
           </ReactModal>
         )}

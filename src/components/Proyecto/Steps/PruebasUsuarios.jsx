@@ -32,7 +32,7 @@ export default function Needfinding() {
   return (
     <div className=" bg-white justify-center items-center flex flex-col">
       <SubHead style="text-center">
-        Etapa 5 - Pruebas de Jugabilidad
+        Etapa 8 - Pruebas de Jugabilidad
       </SubHead>
       <div className='flex gap-x-3'>
         <iframe

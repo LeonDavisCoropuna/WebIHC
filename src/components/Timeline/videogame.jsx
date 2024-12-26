@@ -8,6 +8,10 @@ import React, { useState } from 'react'
 import FeatureItemImage from '../Proyecto/featureItemImage';
 import { AnimatePresence, motion } from 'framer-motion';
 import Paragraph from '../Atoms/paragraph';
+import ReactModal from 'react-modal';
+import EvaluacionUsuarios from '../Video-Juego/steps/EvaluacionUsuarios';
+import EvaluacionUsuariosc from '../Video-Juego/steps/EvaluacionUsuariosc';
+import PrototipoMaqueta from '../Video-Juego/steps/PrototipoMaqueta';
 
 export default function Timeline() {
   const items = [
@@ -22,7 +26,8 @@ export default function Timeline() {
       img: "/lluvia-ideas.png",
       status: "completed",
       date: "6 de Septiembre - 2024",
-      right: true
+      right: true,
+      modal: false
     },
     {
       id: 2,
@@ -35,7 +40,8 @@ export default function Timeline() {
       img: "/sketching.png",
       status: "completed",
       date: "12 de Septiembre - 2024",
-      right: false
+      right: false,
+      modal: false
     },
     {
       id: 3,
@@ -48,7 +54,8 @@ export default function Timeline() {
       img: "/storyboard.png",
       status: "completed",
       date: "19 de Septiembre - 2024",
-      right: true
+      right: true,
+      modal: false
     },
     {
       id: 4,
@@ -61,7 +68,9 @@ export default function Timeline() {
       img: "/prototipo.png",
       status: "completed",
       date: "26 de Septiembre - 2024",
-      right: false
+      right: false,
+      modal: true
+
     },
     {
       id: 5,
@@ -74,7 +83,9 @@ export default function Timeline() {
       img: "/juegov1.png",
       status: "completed",
       date: "3 de Octubre - 2024",
-      right: true
+      right: true,
+      modal: true
+
     },
     {
       id: 6,
@@ -87,7 +98,9 @@ export default function Timeline() {
       img: "/juegov2.png",
       status: "completed",
       date: "10 de Octubre - 2024",
-      right: false
+      right: false,
+      modal: true
+
     },
     {
       id: 7,
@@ -100,7 +113,9 @@ export default function Timeline() {
       img: "/juegov3.png",
       status: "completed",
       date: "17 de Octubre - 2024, Parcial I",
-      right: true
+      right: true,
+      modal: true
+
     },
     {
       id: 8,
@@ -113,7 +128,9 @@ export default function Timeline() {
       img: "/juegov4.png",
       status: "completed",
       date: "24 de Octubre - 2024",
-      right: false
+      right: false,
+      modal: true
+
     }
   ];
   const [expandedItems, setExpandedItems] = useState({
@@ -133,6 +150,18 @@ export default function Timeline() {
       ...prev,
       [id]: !prev[id], // Cambia entre true y false
     }));
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(0)
+  const openModal = (index) => {
+    setSelectedItem(index);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setSelectedItem(null);
   };
 
   return (
@@ -171,7 +200,7 @@ export default function Timeline() {
                 animate={{ rotate: expandedItems[item.id] ? 180 : 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <FaChevronDown className='hover:scale-150 cursor-pointer' />
+                <FaChevronDown className={`${item.modal && "cursor-pointer hover:scale-105"}`} />
               </motion.div>
 
             </div>
@@ -187,28 +216,37 @@ export default function Timeline() {
 
             <AnimatePresence>
               {expandedItems[item.id] && (
-                <motion.div
-                  key="content"
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
+                <button
+                  className={`relative w-full block ${item.modal && "cursor-pointer hover:scale-105"} duration-200 bg-transparent text-left`}
+                  onClick={() => {
+                    if (item.modal === true) {
+                      openModal(index + 1);
+                    }
+                  }}
                 >
+                  <motion.div
+                    key="content"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
 
-                  {/* Contenedor del párrafo */}
-                  {item.content.map((paragraph, i) => (
-                    <div className="p-1" key={i}>
-                      <div
-                        className={`transition-all duration-300 ease-out  text-left'}`} // Animación y transiciones
-                      >
-                        <Paragraph>{paragraph}</Paragraph>
+                    {/* Contenedor del párrafo */}
+                    {item.content.map((paragraph, i) => (
+                      <div className="p-1" key={i}>
+                        <div
+                          className={`transition-all duration-300 ease-out  text-left'}`} // Animación y transiciones
+                        >
+                          <Paragraph>{paragraph}</Paragraph>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
 
-                  {/* Imagen */}
-                  <img src={item.img} alt="Imagen" className="rounded-lg mt-2" />
-                </motion.div>
+                    {/* Imagen */}
+                    <img src={item.img} alt="Imagen" className="rounded-lg mt-2" />
+                  </motion.div>
+                </button>
               )}
             </AnimatePresence>
           </VerticalTimelineElement>
@@ -218,6 +256,42 @@ export default function Timeline() {
           icon={<FaStar />}
         />
       </VerticalTimeline>
+      <AnimatePresence>
+        {isOpen && (
+          <ReactModal
+            isOpen={isOpen}
+            onRequestClose={closeModal}
+            contentLabel="Video Modal"
+            style={{
+              content: {
+                top: '50%',
+                left: '50%',
+                right: 'auto',
+                bottom: 'auto',
+                marginRight: '-50%',
+                transform: 'translate(-50%, -50%)',
+                width: '80%',
+                height: '80%',
+              },
+              overlay: { backgroundColor: 'rgba(0, 0, 0, 0.1)' },
+            }}
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {selectedItem === 4 && <PrototipoMaqueta />}
+              {selectedItem === 5 && <EvaluacionUsuariosc />}
+
+              {selectedItem === 6 && <EvaluacionUsuariosc />}
+              {selectedItem === 7 && <EvaluacionUsuariosc />}
+              {selectedItem === 8 && <EvaluacionUsuarios />}
+            </motion.div>
+          </ReactModal>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

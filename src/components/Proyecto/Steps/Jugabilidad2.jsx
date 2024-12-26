@@ -36,7 +36,7 @@ const Jugabilidad2 = () => {
       </SubHead>
       <div className='flex gap-x-3'>
         <iframe
-          src={`https://www.youtube.com/embed/qqCrClngybE`}
+          src={`https://www.youtube.com/embed/UL9RVyC8sDc`}
           width={1000}
           height={600}
           allowFullScreen

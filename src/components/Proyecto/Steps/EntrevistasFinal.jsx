@@ -2,29 +2,23 @@ import React, { useState } from 'react'
 import SubHead from '../../Atoms/subhead'
 import { FaPlayCircle } from 'react-icons/fa'
 import ReactModal from 'react-modal';
+const EntrevistasFinal = () => {
 
-export default function Entrevistas() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   const videos = [
     {
-      id: "FAd3cZgVGbY",
-      title: "Entrevista a Aldo",
+      id: "rd16EGrbZ64",
+      title: "Entrevista Final a Aldo",
       description: "Usuario dependiente de IA"
     },
     {
-      id: "92kbg6ciNZI",
-      title: "Entrevista a Josue",
+      id: "_V0gTYLGZ9g",
+      title: "Entrevista Final a Josue",
       description: "Usuario de tercer año"
-    },
-    {
-      id: "dt0HMrmwLYE",
-      title: "Entrevista a Daniela",
-      description: "Anti-usuario de tercer año"
     }
   ];
-
   const openModal = (video) => {
     setSelectedVideo(video);
     setIsOpen(true);
@@ -93,3 +87,6 @@ export default function Entrevistas() {
     </>
   )
 }
+
+export default EntrevistasFinal
+

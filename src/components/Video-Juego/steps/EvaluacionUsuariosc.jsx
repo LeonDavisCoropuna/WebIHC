@@ -1,14 +1,14 @@
 import React from 'react'
 import SubHead from '../../Atoms/subhead'
 
-export default function Implementation4_1() {
+export default function EvaluacionUsuariosc() {
   // Enlace de vista previa del documento
-  const docUrl = "https://docs.google.com/presentation/d/16yuHYosB8srtdULzeeE4ykXuu7m_BJMr/preview";
+  const docUrl = "https://www.youtube.com/embed/qCeqc0BhE-c";
 
   return (
     <div className=" bg-white justify-center items-center flex flex-col">
       <SubHead style="text-center">
-        Etapa 7 - ¿Cómo se cubrieron las necesidades?
+        Evaluación con Usuarios
       </SubHead>
       <div className='flex gap-x-3'>
         <div className="flex gap-x-12 ">
