@@ -87,7 +87,7 @@ export default function proyecto() {
     },
     {
       id: 6,
-      title: "Etapa 6 - Patrones de Diseños y Prácticas Usadas",
+      title: "Etapa 6 - Patrones de Diseños y Capítulos del Libro Implementados",
       logo: "/feature-2.svg",
       content: [
         "Se implementó el videojuego siguiendo patrones de diseño, principios de Gestalt y los conocimientos adquiridos en clase.",
